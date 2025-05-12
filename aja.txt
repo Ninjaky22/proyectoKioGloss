@@ -1,0 +1,152 @@
+
+    <div class="container">
+
+      <div class="footer-left">
+
+        <div class="whatsapp-container">
+          <img src="img_cat/whatsapp.svg" class="imgfooter" />
+
+          <div class="whatsapp-info">
+            <span>Whatsapp</span>
+            <p>+57 3214479475</p>
+          </div>
+
+        </div>
+
+        <img src="img_cat/instagram.svg" class="imgfooter" />
+        <p>@kio_gloss</p>
+      </div>
+
+      <div class="footer-right">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d496.9565290810425!2d-75.6847835!3d4.8296384!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e38818a2c87b945%3A0x114245012ce5df47!2sKIO%20GLOSS!5e0!3m2!1ses-419!2sco!4v1745859401714!5m2!1ses-419!2sco"
+          width="30%" height="300" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+
+    </div>
+
+    <p>&copy; 2025 KIO Gloss. Todos los derechos reservados.</p>
+
+
+
+
+    CSS 
+
+    footer {
+  position: static;
+  bottom: 0;
+  width: 100%;
+  background-color: #e6affc;
+  padding: 10px 0;
+  z-index: 1000;
+}
+
+.footerContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  gap: 10px;
+}
+
+.footer-left{
+  display: flex;
+  align-items: center;
+  margin-left: 75px;
+}
+
+.whatsapp-container{
+  display: flex;
+  align-items: start;
+}
+
+.whatsapp-info{
+  display: flex;
+  flex-direction: column;
+  padding-left: 10px;
+}
+
+.imgfooter{
+  border-radius: 50%;
+  width: 35px;
+  height: 35px;
+  margin-right: 10px;
+  vertical-align: middle;
+}
+
+.footer-right{
+  display: flex;
+  justify-content: right;
+  margin-right: 75px;
+}
+
+.redes {
+  margin: 0 10px;
+  display: inline-block;
+  align-items: center;
+  transition: trasform 0.3s ease, opcity 0.3s ease;
+}
+
+.redes a:hover {
+  opacity: 0.8;
+}
+
+footer p {
+  font-size: 16px;
+  color: #4c006d;
+  margin: 0;
+  font-family: Caveat;
+}
+
+
+<footer class="footerContainer">
+    <div class="footerdad">
+
+      <div class="footerleft">
+
+        <div class="social-item whatsapp-footer">
+          <img src="img_cat/whatsapp.svg" class="img-footer">
+          
+          <div class="text-footer">
+          <p> Whatsapp</p>
+          <p> +57 3214479475</p>
+          </div>
+
+        </div>
+
+        <div class="social-item instagram-footer">
+          <img src="img_cat/instagram.svg" class="img-footer">
+          
+          <div class="text-footer">
+          <p> Whatsapp</p>
+          <p> +57 3214479475</p>
+          </div>
+          
+        </div>
+
+      </div>
+
+      <div class="footerright">
+
+        <div class="social-item gmail-footer">
+          <img src="img_cat/gmail.svg" class="img-footer">
+          
+          <div class="text-footer">
+          <p> Whatsapp</p>
+          <p> +57 3214479475</p>
+          </div>
+
+        </div>
+
+        <div class="social-item ubication-footer">
+          <img src="img_cat/ubicacion.svg" class="img-footer">
+          
+          <div class="text-footer">
+          <p> Whatsapp</p>
+          <p> +57 3214479475</p>
+          </div>
+          
+        </div>
+
+      </div>
+      
+    </div>

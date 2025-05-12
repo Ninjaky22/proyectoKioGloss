@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="responsive.css">
+  <script src="kiogloss.js" defer></script>
+  <script src="carrusel.js" defer></script>
+  <title>KIO Gloss</title>
+  <link rel="stylesheet" href="font.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&display=swap" rel="stylesheet" />
+  <link rel="preconnect" href="https://www.google.com.ar/maps?hl=es" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+
+<body>
+  <header>
+    <nav class="nav1">
+      <section class="section">
+        <form action="/buscar" method="post">
+          <img src="img_cat/lupa.png" class="lupa_buscador" />
+          <input class="busqueda-input" type="text" id="terminoBusqueda" name="q" />
+        </form>
+      </section>
+      <img class="logo" src="img_cat/logo1.png" alt="Logo KIO Gloss" width="10%" style="justify-content: flex-end" />
+      <a href="#" class="registro">Ingresar</a>
+      <a href="#" class="registro">Registrarse</a>
+    </nav>
+    <hr color="white" />
+    <nav class="nav1">
+      <button class="buttom" onclick="accion ()">MENU</button>
+      <div class="sub-menu">
+        <a href="#" class="nav-links desaparece">Cuidado Facial</a>
+        <div class="sub-menu-content">
+          <a href="#">Kits</a>
+          <a href="#">Contornos</a>
+          <a href="#">Jabones</a>
+          <a href="#">Cremas</a>
+          <a href="#">Serum</a>
+          <a href="#">Gel</a>
+          <a href="#">Papelitos de arroz</a>
+          <a href="#">Protector</a>
+          <a href="#">Mascarilla</a>
+        </div>
+      </div>
+      <a href="#" class="nav-links desaparece">Desmaquillantes</a>
+      <div class="sub-menu">
+        <a href="#" class="nav-links desaparece">Maquillaje</a>
+        <div class="sub-menu-content">
+          <a href="#">Piel</a>
+          <a href="#">Cejas</a>
+          <a href="#">Ojos</a>
+        </div>
+      </div>
+      <a href="#" class="nav-links desaparece">Tónicos</a>
+      <div class="sub-menu">
+        <a href="#" class="nav-links desaparece">Cuidado Capilar</a>
+        <div class="sub-menu-content">
+          <a href="#">Aceite</a>
+          <a href="#">Shampoo</a>
+          <a href="#">Acondicionador</a>
+          <a href="#">Kits</a>
+          <a href="#">Tratamiento</a>
+          <a href="#">Loción</a>
+          <a href="#">Perfume</a>
+          <a href="#">Reporalizador</a>
+          <a href="#">Termoprotector</a>
+        </div>
+      </div>
+      <a href="#" class="nav-links desaparece">Brochas</a>
+    </nav>
+  </header>
+
+  <div class="container">
+    <div class="sticky-social-conteiner">
+      <div class="sticky-social">
+        <a href="https://api.whatsapp.com/send/?phone=573214479475&text&type=phone_number&app_absent=0" target="_blank">
+          <p>Whatsapp</p>
+          <i class="bi bi-whatsapp"></i>
+        </a>
+        <a href="https://www.instagram.com/kio_gloss/" target="_blank">
+          <p>Instagram</p>
+          <i class="bi bi-instagram"></i>
+        </a>
+        <a href="https://api.whatsapp.com/send/?phone=573214479475&text&type=phone_number&app_absent=0" target="_blank">
+          <p>Gmail</p>
+          <i class="bi bi-chat-square-text"></i>
+        </a>
+      </div>
+    </div>
+    <div class="contenedor-principal">
+      <h2 class="titulo-seccion">PRODUCTOS DESTACADOS</h2>
+
+      <div class="contenedor-carrusel">
+        <button class="btn-navegacion btn-anterior">
+          <i class="fas fa-chevron-left"></i>
+        </button>
+
+        <div class="carrusel">
+          <div class="categoria">
+            <div class="icono-categoria">
+              <i class="fas fa-spa"></i>
+            </div>
+            <span>PRODUCTO 1</span>
+          </div>
+
+          <div class="categoria">
+            <div class="icono-categoria">
+              <i class="fas fa-smile"></i>
+            </div>
+            <span>PRODUCTO 2</span>
+          </div>
+
+          <div class="categoria">
+            <div class="icono-categoria">
+              <i class="fas fa-hand-holding-water"></i>
+            </div>
+            <span>PRODUCTO 3</span>
+          </div>
+
+          <div class="categoria">
+            <div class="icono-categoria">
+              <i class="fas fa-hand-paper"></i>
+            </div>
+            <span>PRODUCTO 4</span>
+          </div>
+
+          <div class="categoria">
+            <div class="icono-categoria">
+              <i class="fas fa-paint-brush"></i>
+            </div>
+            <span>PRODUCTO 5</span>
+          </div>
+
+          <div class="categoria">
+            <div class="icono-categoria">
+              <i class="fas fa-kiss-wink-heart"></i>
+            </div>
+            <span>PRODUCTO 6</span>
+          </div>
+
+          <div class="categoria">
+            <div class="icono-categoria">
+              <i class="fas fa-eye"></i>
+            </div>
+            <span>PRODUCTO 7</span>
+          </div>
+        </div>
+
+        <button class="btn-navegacion btn-siguiente">
+          <i class="fas fa-chevron-right"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+
+      <div class="whatsapp">
+        <div class="redes1">
+          <a href="https://api.whatsapp.com/send/?phone=573214479475&text&type=phone_number&app_absent=0" target="_blank"><img src="img_cat/whatsapp.svg" alt="" class="img-footer"></a>
+          <h3>
+            Whatsapp
+          </h3>
+        </div>
+        <p class="info">
+          +57 3214479475
+        </p>
+      </div>
+
+      <div class="Instagram">
+        <div class="redes1">
+          <a href="https://www.instagram.com/kio_gloss/" target="_blank"><img src="img_cat/instagram.svg" alt="" class="img-footer"></a>
+          <h3>
+            Instagram
+          </h3>
+        </div>
+        <p>
+          @kio_gloss
+        </p>
+
+      </div>
+      
+      <div class="Gmail">
+        <div class="redes1">
+          <a href="https://mail.google.com/mail/?view=cm&fs=1&to=kioglos@gmail.com" target="_blank"><img src="img_cat/gmail.svg" alt="" class="img-footer"></a>
+          <h3>
+            Gmail
+          </h3>
+        </div>
+        <p>
+          dmpenagos16@gmail.com
+        </p>
+      </div>
+
+      <div class="Ubicacion">
+        <div class="redes1">
+          <a href="https://www.google.com/maps/place/KIO+GLOSS/@4.8296065,-75.6873548,17z/data=!3m1!4b1!4m6!3m5!1s0x8e38818a2c87b945:0x114245012ce5df47!8m2!3d4.8296012!4d-75.6847745!16s%2Fg%2F11kprxy2hg?hl=es&entry=ttu&g_ep=EgoyMDI1MDUwNy4wIKXMDSoJLDEwMjExNDUzSAFQAw%3D%3D" target="_blank"><img src="img_cat/ubicacion.svg" alt="" class="img-footer"></a>
+          <h3>
+            Ubicación
+          </h3>
+        </div>
+        <p>
+          Campestre D mz 12 Casa 24
+        </p>
+
+      </div>
+
+  </footer>
+
+</body>
+
+</html>
