@@ -8,6 +8,7 @@
   <link rel="stylesheet" href="responsive.css">
   <script src="kiogloss.js" defer></script>
   <script src="carrusel.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" defer></script>
   <title>KIO Gloss</title>
   <link rel="stylesheet" href="font.googleapis.com" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -27,8 +28,19 @@
           <input class="busqueda-input" type="text" id="terminoBusqueda" name="q" />
         </form>
       </section>
-      <img class="logo" src="img_cat/logo1.png" alt="Logo KIO Gloss" width="10%" style="justify-content: flex-end" />
-      <a href="#" class="registro">Ingresar</a>
+      <img class="logo" src="img_cat/logo.png" alt="Logo KIO Gloss" width="10%" style="justify-content: flex-end" />
+      <button id="btn-abrir-modal" class="registro">Ingresar</button>
+      <dialog id="modal">
+        <div class="dialog">
+          <img src="img_cat/personita1.svg" class="personita">
+          <h1>INICIO DE SESION</h1>
+          <form method="dialog" class="ingresar-form">
+            <input type="text" placeholder="Email o usuario" required>
+            <input type="password" placeholder="Contraseña" required>
+          </form>
+          <button id="btn-cerrar-modal" class="boton-cerrar-modal">Ingresar</button>
+        </div>
+      </dialog>
       <a href="#" class="registro">Registrarse</a>
     </nav>
     <hr color="white" />
@@ -87,132 +99,101 @@
           <p>Instagram</p>
           <i class="bi bi-instagram"></i>
         </a>
-        <a href="https://api.whatsapp.com/send/?phone=573214479475&text&type=phone_number&app_absent=0" target="_blank">
+        <a href="https://mail.google.com/mail/?view=cm&fs=1&to=kioglos@gmail.com<" target="_blank">
           <p>Gmail</p>
           <i class="bi bi-chat-square-text"></i>
         </a>
       </div>
     </div>
-    <div class="contenedor-principal">
-      <h2 class="titulo-seccion">PRODUCTOS DESTACADOS</h2>
 
-      <div class="contenedor-carrusel">
-        <button class="btn-navegacion btn-anterior">
-          <i class="fas fa-chevron-left"></i>
-        </button>
-
-        <div class="carrusel">
-          <div class="categoria">
-            <div class="icono-categoria">
-              <i class="fas fa-spa"></i>
+    <section class="featured-products">
+      <h2>Productos Destacados</h2>
+      <div class="slider-container">
+        <button class="slider-button prev-button"><i class="fas fa-chevron-left"></i></button>
+        <div class="slider-wrapper">
+          <div class="product-card">
+            <img src="img_cat/iamgenEjemplo.jpeg" alt="Producto 1">
+            <div class="product-info">
+              <p class="description">Base de maquillaje de larga duración con acabado natural.</p>
+              <p class="price">$25.00</p>
+              <div class="actions">
+                <button class="icon-button"><i class="fas fa-shopping-cart"></i></button>
+                <button class="icon-button"><i class="fas fa-eye"></i></button>
+              </div>
             </div>
-            <span>PRODUCTO 1</span>
           </div>
-
-          <div class="categoria">
-            <div class="icono-categoria">
-              <i class="fas fa-smile"></i>
+          <div class="product-card">
+            <img src="img_cat/iamgenEjemplo.jpeg" alt="Producto 2">
+            <div class="product-info">
+              <p class="description">Paleta de sombras con tonos neutros y tierra.</p>
+              <p class="price">$35.00</p>
+              <div class="actions">
+                <button class="icon-button"><i class="fas fa-shopping-cart"></i></button>
+                <button class="icon-button"><i class="fas fa-eye"></i></button>
+              </div>
             </div>
-            <span>PRODUCTO 2</span>
           </div>
-
-          <div class="categoria">
-            <div class="icono-categoria">
-              <i class="fas fa-hand-holding-water"></i>
+          <div class="product-card">
+            <img src="img_cat/iamgenEjemplo.jpeg" alt="Producto 3">
+            <div class="product-info">
+              <p class="description">Labial líquido mate de alta pigmentación.</p>
+              <p class="price">$18.00</p>
+              <div class="actions">
+                <button class="icon-button"><i class="fas fa-shopping-cart"></i></button>
+                <button class="icon-button"><i class="fas fa-eye"></i></button>
+              </div>
             </div>
-            <span>PRODUCTO 3</span>
           </div>
-
-          <div class="categoria">
-            <div class="icono-categoria">
-              <i class="fas fa-hand-paper"></i>
+          <div class="product-card">
+            <img src="img_cat/iamgenEjemplo.jpeg" alt="Producto 4">
+            <div class="product-info">
+              <p class="description">Labial líquido mate de alta pigmentación.</p>
+              <p class="price">$18.00</p>
+              <div class="actions">
+                <button class="icon-button"><i class="fas fa-shopping-cart"></i></button>
+                <button class="icon-button"><i class="fas fa-eye"></i></button>
+              </div>
             </div>
-            <span>PRODUCTO 4</span>
           </div>
-
-          <div class="categoria">
-            <div class="icono-categoria">
-              <i class="fas fa-paint-brush"></i>
+          <div class="product-card">
+            <img src="img_cat/iamgenEjemplo.jpeg" alt="Producto 5">
+            <div class="product-info">
+              <p class="description">Labial líquido mate de alta pigmentación.</p>
+              <p class="price">$18.00</p>
+              <div class="actions">
+                <button class="icon-button"><i class="fas fa-shopping-cart"></i></button>
+                <button class="icon-button"><i class="fas fa-eye"></i></button>
+              </div>
             </div>
-            <span>PRODUCTO 5</span>
           </div>
-
-          <div class="categoria">
-            <div class="icono-categoria">
-              <i class="fas fa-kiss-wink-heart"></i>
+          <div class="product-card">
+            <img src="img_cat/iamgenEjemplo.jpeg" alt="Producto 5">
+            <div class="product-info">
+              <p class="description">Labial líquido mate de alta pigmentación.</p>
+              <p class="price">$18.00</p>
+              <div class="actions">
+                <button class="icon-button"><i class="fas fa-shopping-cart"></i></button>
+                <button class="icon-button"><i class="fas fa-eye"></i></button>
+              </div>
             </div>
-            <span>PRODUCTO 6</span>
-          </div>
-
-          <div class="categoria">
-            <div class="icono-categoria">
-              <i class="fas fa-eye"></i>
-            </div>
-            <span>PRODUCTO 7</span>
           </div>
         </div>
-
-        <button class="btn-navegacion btn-siguiente">
-          <i class="fas fa-chevron-right"></i>
-        </button>
+        <button class="slider-button next-button"><i class="fas fa-chevron-right"></i></button>
       </div>
-    </div>
+    </section>
   </div>
 
   <footer>
-
-      <div class="whatsapp">
-        <div class="redes1">
-          <a href="https://api.whatsapp.com/send/?phone=573214479475&text&type=phone_number&app_absent=0" target="_blank"><img src="img_cat/whatsapp.svg" alt="" class="img-footer"></a>
-          <h3>
-            Whatsapp
-          </h3>
-        </div>
-        <p class="info">
-          +57 3214479475
-        </p>
-      </div>
-
-      <div class="Instagram">
-        <div class="redes1">
-          <a href="https://www.instagram.com/kio_gloss/" target="_blank"><img src="img_cat/instagram.svg" alt="" class="img-footer"></a>
-          <h3>
-            Instagram
-          </h3>
-        </div>
-        <p>
-          @kio_gloss
-        </p>
-
-      </div>
-      
-      <div class="Gmail">
-        <div class="redes1">
-          <a href="https://mail.google.com/mail/?view=cm&fs=1&to=kioglos@gmail.com" target="_blank"><img src="img_cat/gmail.svg" alt="" class="img-footer"></a>
-          <h3>
-            Gmail
-          </h3>
-        </div>
-        <p>
-          dmpenagos16@gmail.com
-        </p>
-      </div>
-
-      <div class="Ubicacion">
-        <div class="redes1">
-          <a href="https://www.google.com/maps/place/KIO+GLOSS/@4.8296065,-75.6873548,17z/data=!3m1!4b1!4m6!3m5!1s0x8e38818a2c87b945:0x114245012ce5df47!8m2!3d4.8296012!4d-75.6847745!16s%2Fg%2F11kprxy2hg?hl=es&entry=ttu&g_ep=EgoyMDI1MDUwNy4wIKXMDSoJLDEwMjExNDUzSAFQAw%3D%3D" target="_blank"><img src="img_cat/ubicacion.svg" alt="" class="img-footer"></a>
-          <h3>
-            Ubicación
-          </h3>
-        </div>
-        <p>
-          Campestre D mz 12 Casa 24
-        </p>
-
-      </div>
-
+    <div class="mapa">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d248.47826132442393!2d-75.68487196582885!3d4.829647176891404!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e38818a2c87b945%3A0x114245012ce5df47!2sKIO%20GLOSS!5e0!3m2!1ses-419!2sco!4v1747089945886!5m2!1ses-419!2sco"
+        width="800" height="200" style="border:0;" allowfullscreen="" loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+    <strong>
+      <p class="derechos">Copyright 2025 &copy; Derechos Reservador por estudiantes de la FET</p>
+    </strong>
   </footer>
-
 </body>
 
 </html>

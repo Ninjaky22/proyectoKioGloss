@@ -1,83 +1,70 @@
 document.addEventListener('DOMContentLoaded', function() {
-    const carrusel = document.querySelector('.carrusel');
-    const btnAnterior = document.querySelector('.btn-anterior');
-    const btnSiguiente = document.querySelector('.btn-siguiente');
-    const categorias = document.querySelectorAll('.categoria');
-    
-    const anchoCategoria = 150; // Ancho de cada categoría + gap
-    let desplazamiento = 0;
-    const maxDesplazamiento = (categorias.length - 5) * anchoCategoria;
-    
-    // Función para actualizar la visibilidad de los botones
-    function actualizarBotones() {
-        btnAnterior.style.display = desplazamiento <= 0 ? 'none' : 'flex';
-        btnSiguiente.style.display = desplazamiento >= maxDesplazamiento ? 'none' : 'flex';
+    const sliderContainer = document.querySelector('.slider-container');
+    const sliderWrapper = document.querySelector('.slider-wrapper');
+    const prevButton = document.querySelector('.prev-button');
+    const nextButton = document.querySelector('.next-button');
+    const productCards = document.querySelectorAll('.product-card');
+    let currentIndex = 0;
+    let cardsToShow = 4; // Cantidad de tarjetas a mostrar inicialmente
+    let cardWidth = 0;
+
+    function calculateCardWidth() {
+        if (productCards.length > 0) {
+            const firstCardStyle = window.getComputedStyle(productCards[0]);
+            const cardOuterWidth = productCards[0].offsetWidth + parseInt(firstCardStyle.marginRight) + parseInt(firstCardStyle.marginLeft);
+            cardWidth = cardOuterWidth;
+        } else {
+            cardWidth = 0;
+        }
     }
-    
-    // Inicializar visibilidad de botones
-    actualizarBotones();
-    
-    // Evento para botón siguiente
-    btnSiguiente.addEventListener('click', function() {
-        if (desplazamiento < maxDesplazamiento) {
-            desplazamiento += anchoCategoria;
-            carrusel.scrollTo({
-                left: desplazamiento,
-                behavior: 'smooth'
-            });
-            actualizarBotones();
+
+    function updateSlider() {
+        sliderWrapper.style.transform = `translateX(-${currentIndex * cardWidth}px)`;
+        updateButtonVisibility();
+    }
+
+    function nextSlide() {
+        if (currentIndex < productCards.length - cardsToShow) {
+            currentIndex++;
+            updateSlider();
         }
-    });
-    
-    // Evento para botón anterior
-    btnAnterior.addEventListener('click', function() {
-        if (desplazamiento > 0) {
-            desplazamiento -= anchoCategoria;
-            carrusel.scrollTo({
-                left: desplazamiento,
-                behavior: 'smooth'
-            });
-            actualizarBotones();
+    }
+
+    function prevSlide() {
+        if (currentIndex > 0) {
+            currentIndex--;
+            updateSlider();
         }
-    });
-    
-    // Evento para hacer clic en una categoría
-    categorias.forEach(categoria => {
-        categoria.addEventListener('click', function() {
-            // Aquí puedes agregar la lógica para redirigir a la categoría seleccionada
-            console.log('Categoría seleccionada:', this.querySelector('span').textContent);
+    }
+
+    function updateButtonVisibility() {
+        if (prevButton) {
+            prevButton.style.display = currentIndex > 0 ? 'block' : 'none';
+        }
+        if (nextButton) {
+            nextButton.style.display = currentIndex < productCards.length - cardsToShow ? 'block' : 'none';
+        }
+    }
+
+    // Inicialización
+    if (productCards.length > 0) {
+        calculateCardWidth(); // Aseguramos que el ancho se calcule primero
+
+        // Ajustar el ancho del slider-wrapper para contener todas las tarjetas
+        sliderWrapper.style.width = `${productCards.length * cardWidth}px`;
+
+        updateSlider();
+
+        if (nextButton) {
+            nextButton.addEventListener('click', nextSlide);
+        }
+        if (prevButton) {
+            prevButton.addEventListener('click', prevSlide);
+        }
+
+        window.addEventListener('resize', () => {
+            calculateCardWidth();
+            updateSlider();
         });
-    });
-    
-    // Soporte para touch en dispositivos móviles
-    let inicioTouchX = 0;
-    let finTouchX = 0;
-    
-    carrusel.addEventListener('touchstart', function(e) {
-        inicioTouchX = e.touches[0].clientX;
-    }, {passive: true});
-    
-    carrusel.addEventListener('touchmove', function(e) {
-        finTouchX = e.touches[0].clientX;
-    }, {passive: true});
-    
-    carrusel.addEventListener('touchend', function() {
-        if (finTouchX < inicioTouchX - 50 && desplazamiento < maxDesplazamiento) {
-            desplazamiento += anchoCategoria;
-            carrusel.scrollTo({
-                left: desplazamiento,
-                behavior: 'smooth'
-            });
-            actualizarBotones();
-        }
-        
-        if (finTouchX > inicioTouchX + 50 && desplazamiento > 0) {
-            desplazamiento -= anchoCategoria;
-            carrusel.scrollTo({
-                left: desplazamiento,
-                behavior: 'smooth'
-            });
-            actualizarBotones();
-        }
-    }, {passive: true});
+    }
 });
