@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="productos.css" />
+    <link rel="stylesheet" href="responsive.css">
+    <link rel="stylesheet" href="carrito.css">
+    <script src="carrito.js"></script>
+    <script src="kiogloss.js" defer></script>
+    <script src="carrusel.js" defer></script>
+    <script src="animacion.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" defer></script>
+    <title>Productos</title>
+    <link rel="stylesheet" href="font.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&display=swap" rel="stylesheet" />
+    <link rel="preconnect" href="https://www.google.com.ar/maps?hl=es" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+
+
+<body id="top">
+    <header>
+        <nav class="nav1">
+            <section class="section">
+                <form action="/buscar" method="post">
+                    <img src="img_cat/lupa.png" class="lupa_buscador" />
+                    <input class="busqueda-input" type="text" id="terminoBusqueda" name="q" />
+                </form>
+            </section>
+            <a href="index.html" id="logo-link"><img src="img_cat/logo.png" alt="Logo" class="logo" width="132px"
+                    height="105px" style="justify-content: flex-end" /></a>
+            <button id="btn-abrir-ingresar" class="ingreso">Ingresar</button>
+            <button id="btn-abrir-registrar" class="ingreso">Registrate</button>
+            <a href="#" class="carrito ingreso">
+                <i class="fas fa-shopping-cart"></i>
+            </a>
+        </nav>
+        <hr color="white" />
+        <nav class="menu">
+            <a href="index.html" class="nav-links desaparece">Inicio</a>
+            <a href="#" class="nav-links desaparece">Productos</a>
+            <a href="Nosotros.html" class="nav-links desaparece">Nosotros</a>
+        </nav>
+    </header>
+    <div class="sticky-social-conteiner">
+        <div class="sticky-social">
+            <a href="https://api.whatsapp.com/send/?phone=573214479475&text&type=phone_number&app_absent=0"
+                target="_blank">
+                <p>Whatsapp</p>
+                <i class="bi bi-whatsapp"></i>
+            </a>
+            <a href="https://www.instagram.com/kio_gloss/" target="_blank">
+                <p>Instagram</p>
+                <i class="bi bi-instagram"></i>
+            </a>
+            <a href="https://mail.google.com/mail/?view=cm&fs=1&to=kioglos@gmail.com" target="_blank">
+                <p>Gmail</p>
+                <i class="bi bi-chat-square-text"></i>
+            </a>
+        </div>
+    </div>
+
+    <div class="div-ancla">
+        <a href="#facial" class="anclas">Cuidado Facial</a>
+        <a href="#maquillaje" class="anclas">Maquillaje</a>
+        <a href="#desma" class="anclas">Desmaquillantes</a>
+        <a href="productos-pag2.html#tonicos" class="anclas">Tónicos</a>
+        <a href="productos-pag2.html#capilar" class="anclas">Cuidado Capilar</a>
+        <a href="productos-pag2.html#brochas" class="anclas">Brochas</a>
+    </div>
+
+    <div class="navegacion-paginas-circular">
+        <a href="#" class="boton-circular boton-anterior">
+            <i class="fas fa-arrow-left"></i>
+        </a>
+        <a href="productos-pag2.html" class="boton-circular boton-siguiente">
+            <i class="fas fa-arrow-right"></i>
+        </a>
+    </div>
+
+    <!--    Cuidado Facial   -->
+    <section class="product-grid-section">
+        <h2 id="facial" class="section-title">Cuidado Facial</h2>
+        <div class="products-grid">
+            <div class="product-card">
+                <img src="img_cat/bioaquaarroz.jpg" alt="TKIT DE ARROZ BIOAQUA" class="product-image">
+                <div class="product-info">
+                    <h3 class="product-name">KIT DE ARROZ BIOAQUA</h3>
+                    <p class="product-description"></p>
+                    <p class="product-price">$48.000 COP</p>
+                    <div class="quantity-selector">
+                        <button class="quantity-btn minus">-</button>
+                        <input type="number" class="quantity-input" value="1" min="1">
+                        <button class="quantity-btn plus">+</button>
+                    </div>
+                    <div class="product-actions">
+                        <button class="buy-btn" data-product='{"name":"KIT DE ARROZ BIOAQUA", "price":48000}'>
+                            <i class="fas fa-shopping-cart"></i>
+                        </button>
+                        <a href="#" class="icon-button">
+                            <i class="fas fa-eye"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <img src="img_cat/kitvitaminacbioaqua.jpg" alt="KIT DE VITAMINA C  BIOAQUA" class="product-image">
+                <div class="product-info">
+                    <h3 class="product-name">KIT DE VITAMINA C BIOAQUA</h3>
+                    <p class="product-description"></p>
+                    <p class="product-price">$65.000 COP</p>
+                    <div class="quantity-selector">
+                        <button class="quantity-btn minus">-</button>
+                        <input type="number" class="quantity-input" value="1" min="1">
+                        <button class="quantity-btn plus">+</button>
+                    </div>
+                    <div class="product-actions">
+                        <button class="buy-btn" data-product='{"name":"KIT DE VITAMINA C  BIOAQUA", "price":65000}'>
+                            <i class="fas fa-shopping-cart"></i>
+                        </button>
+                        <a href="#" class="icon-button">
+                            <i class="fas fa-eye"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <img src="img_cat/kitacidobioaqua.jpg" alt="KIT DE ACIDO HIALURONICO BIOAQUA" class="product-image">
+                <div class="product-info">
+                    <h3 class="product-name">KIT DE ACIDO HIALURONICO BIOAQUA</h3>
+                    <p class="product-description"></p>
+                    <p class="product-price">$70.000 COP</p>
+                    <div class="quantity-selector">
+                        <button class="quantity-btn minus">-</button>
+                        <input type="number" class="quantity-input" value="1" min="1">
+                        <button class="quantity-btn plus">+</button>
+                    </div>
+                    <div class="product-actions">
+                        <button class="buy-btn"
+                            data-product='{"name":"KIT DE ACIDO HIALURONICO BIOAQUA", "price":70000}'>
+                            <i class="fas fa-shopping-cart"></i>
+                        </button>
+                        <a href="#" class="icon-button">
+                            <i class="fas fa-eye"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <img src="img_cat/cremahidratantebioaqua.jpg" alt="CREMA HIDRATANTE  ARANDANOS BIOAQUA" class="product-image">
+                <div class="product-info">
+                    <h3 class="product-name">CREMA HIDRATANTE ARANDANOS BIOAQUA</h3>
+                    <p class="product-description"></p>
+                    <p class="product-price">$22.000 COP</p>
+                    <div class="quantity-selector">
+                        <button class="quantity-btn minus">-</button>
+                        <input type="number" class="quantity-input" value="1" min="1">
+                        <button class="quantity-btn plus">+</button>
+                    </div>
+                    <div class="product-actions">
+                        <button class="buy-btn"
+                            data-product='{"name":"CREMA HIDRATANTE  ARANDANOS BIOAQUA", "price":22000}'>
+                            <i class="fas fa-shopping-cart"></i>
+                        </button>
+                        <a href="#" class="icon-button">
+                            <i class="fas fa-eye"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!--    Maquillaje   -->
+    <section class="product-grid-section">
+        <h2 id="maquillaje" class="section-title">Maquillaje</h2>
+        <div class="products-grid">
+            <div class="product-card">
+                <img src="img_cat/sombraretrocoral.jpg" alt="TSOMBRAS COLECCIÓN RETRO  CORAL TRENDY"
+                    class="product-image">
+                <div class="product-info">
+                    <h3 class="product-name">SOMBRAS COLECCIÓN RETRO CORAL TRENDY</h3>
+                    <p class="product-description"></p>
+                    <p class="product-price">$20.000 COP</p>
+                    <div class="quantity-selector">
+                        <button class="quantity-btn minus">-</button>
+                        <input type="number" class="quantity-input" value="1" min="1">
+                        <button class="quantity-btn plus">+</button>
+                    </div>
+                    <div class="product-actions">
+                        <button class="buy-btn"
+                            data-product='{"name":"SOMBRAS COLECCIÓN RETRO  CORAL TRENDY", "price":20000}'>
+                            <i class="fas fa-shopping-cart"></i>
+                        </button>
+                        <a href="#" class="icon-button">
+                            <i class="fas fa-eye"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <img src="img_cat/sombralila.jpg" alt="SOMBRAS COLECCIÓN RETRO  LILA TRENDY" class="product-image">
+                <div class="product-info">
+                    <h3 class="product-name">SOMBRAS COLECCIÓN RETRO LILA TRENDY</h3>
+                    <p class="product-description"></p>
+                    <p class="product-price">$20.000 COP</p>
+                    <div class="quantity-selector">
+                        <button class="quantity-btn minus">-</button>
+                        <input type="number" class="quantity-input" value="1" min="1">
+                        <button class="quantity-btn plus">+</button>
+                    </div>
+                    <div class="product-actions">
+                        <button class="buy-btn"
+                            data-product='{"name":"SOMBRAS COLECCIÓN RETRO  LILA TRENDY", "price":20000}'>
+                            <i class="fas fa-shopping-cart"></i>
+                        </button>
+                        <a href="#" class="icon-button">
+                            <i class="fas fa-eye"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <img src="img_cat/sombraretrooldrose.png" alt="SOMBRAS COLECCIÓN RETRO OLD ROSE TRENDY"
+                    class="product-image">
+                <div class="product-info">
+                    <h3 class="product-name">SOMBRAS COLECCIÓN RETRO OLD ROSE TRENDY</h3>
+                    <p class="product-description"></p>
+                    <p class="product-price">$20.000 COP</p>
+                    <div class="quantity-selector">
+                        <button class="quantity-btn minus">-</button>
+                        <input type="number" class="quantity-input" value="1" min="1">
+                        <button class="quantity-btn plus">+</button>
+                    </div>
+                    <div class="product-actions">
+                        <button class="buy-btn"
+                            data-product='{"name":"SOMBRAS COLECCIÓN RETRO OLD ROSE TRENDY", "price":20000}'>
+                            <i class="fas fa-shopping-cart"></i>
+                        </button>
+                        <a href="#" class="icon-button">
+                            <i class="fas fa-eye"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <img src="img_cat/sombraretromint.jpg" alt="SOMBRAS COLECCIÓN RETRO MINT TRENDY" class="product-image">
+                <div class="product-info">
+                    <h3 class="product-name">SOMBRAS COLECCIÓN RETRO MINT TRENDY</h3>
+                    <p class="product-description"></p>
+                    <p class="product-price">$20.000 COP</p>
+                    <div class="quantity-selector">
+                        <button class="quantity-btn minus">-</button>
+                        <input type="number" class="quantity-input" value="1" min="1">
+                        <button class="quantity-btn plus">+</button>
+                    </div>
+                    <div class="product-actions">
+                        <button class="buy-btn"
+                            data-product='{"name":"SOMBRAS COLECCIÓN RETRO MINT TRENDY", "price":20000}'>
+                            <i class="fas fa-shopping-cart"></i>
+                        </button>
+                        <a href="#" class="icon-button">
+                            <i class="fas fa-eye"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </section>
+
+    <!--    Desmaquillantes   -->
+    <section class="product-grid-section">
+        <h2 id="desma" class="section-title">Desmaquillantes</h2>
+        <div class="products-grid">
+            <div class="product-card">
+                <img src="img_cat/desmaquillanteaceite.jpg" alt="DESMAQUILLANTE EN ACEITE TRENDY" class="product-image">
+                <div class="product-info">
+                    <h3 class="product-name">DESMAQUILLANTE EN ACEITE TRENDY</h3>
+                    <p class="product-description"></p>
+                    <p class="product-price">$25.000 COP</p>
+                    <div class="quantity-selector">
+                        <button class="quantity-btn minus">-</button>
+                        <input type="number" class="quantity-input" value="1" min="1">
+                        <button class="quantity-btn plus">+</button>
+                    </div>
+                    <div class="product-actions">
+                        <button class="buy-btn"
+                            data-product='{"name":"DESMAQUILLANTE EN ACEITE TRENDY", "price":25000}'>
+                            <i class="fas fa-shopping-cart"></i>
+                        </button>
+                        <a href="#" class="icon-button">
+                            <i class="fas fa-eye"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <img src="img_cat/desmaquillanteespuma.jpg" alt="DESMAQUILLANTE EN ESPUMA TRENDY" class="product-image">
+                <div class="product-info">
+                    <h3 class="product-name">DESMAQUILLANTE EN ESPUMA TRENDY</h3>
+                    <p class="product-description"></p>
+                    <p class="product-price">$35.000 COP</p>
+                    <div class="quantity-selector">
+                        <button class="quantity-btn minus">-</button>
+                        <input type="number" class="quantity-input" value="1" min="1">
+                        <button class="quantity-btn plus">+</button>
+                    </div>
+                    <div class="product-actions">
+                        <button class="buy-btn"
+                            data-product='{"name":"DESMAQUILLANTE EN ESPUMA TRENDY", "price":35000}'>
+                            <i class="fas fa-shopping-cart"></i>
+                        </button>
+                        <a href="#" class="icon-button">
+                            <i class="fas fa-eye"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <img src="img_cat/aguamicelarnivea.webp" alt="AGUA MICELAR REPARADORA NIVEA" class="product-image">
+                <div class="product-info">
+                    <h3 class="product-name">AGUA MICELAR REPARADORA NIVEA</h3>
+                    <p class="product-description"></p>
+                    <p class="product-price">$30.900 COP</p>
+                    <div class="quantity-selector">
+                        <button class="quantity-btn minus">-</button>
+                        <input type="number" class="quantity-input" value="1" min="1">
+                        <button class="quantity-btn plus">+</button>
+                    </div>
+                    <div class="product-actions">
+                        <button class="buy-btn" data-product='{"name":"AGUA MICELAR REPARADORA NIVEA", "price":30900}'>
+                            <i class="fas fa-shopping-cart"></i>
+                        </button>
+                        <a href="#" class="icon-button">
+                            <i class="fas fa-eye"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <img src="img_cat/aguamicelaravene.webp" alt="AGUA MICELAR AVENE CLEANANCE" class="product-image">
+                <div class="product-info">
+                    <h3 class="product-name">AGUA MICELAR AVENE CLEANANCE</h3>
+                    <p class="product-description"></p>
+                    <p class="product-price">$110.000 COP</p>
+                    <div class="quantity-selector">
+                        <button class="quantity-btn minus">-</button>
+                        <input type="number" class="quantity-input" value="1" min="1">
+                        <button class="quantity-btn plus">+</button>
+                    </div>
+                    <div class="product-actions">
+                        <button class="buy-btn" data-product='{"name":"AGUA MICELAR AVENE CLEANANCE", "price":110000}'>
+                            <i class="fas fa-shopping-cart"></i>
+                        </button>
+                        <a href="#" class="icon-button">
+                            <i class="fas fa-eye"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </section>
+
+    <div class="navegacion-paginas-circular">
+        <a href="#" class="boton-circular boton-anterior">
+            <i class="fas fa-arrow-left"></i>
+        </a>
+        <a href="productos-pag2.html" class="boton-circular boton-siguiente">
+            <i class="fas fa-arrow-right"></i>
+        </a>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="mapa">
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d248.47826132442393!2d-75.68487196582885!3d4.829647176891404!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e38818a2c87b945%3A0x114245012ce5df47!2sKIO%20GLOSS!5e0!3m2!1ses-419!2sco!4v1747089945886!5m2!1ses-419!2sco"
+                width="800" height="200" style="border:0;" allowfullscreen="" loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+
+        <div class="footer-div">
+            <div>
+                <a href="#top" class="scroll-top"><img src="img_cat/logo.png" class="logo-2" width="200px"></a>
+            </div>
+
+            <div class="links">
+                <h4>Ayuda</h4>
+                <ul>
+                    <li><button id="btn-abrir-np" class="boton-modal-footer">Nuestros Productos</button></li>
+                    <li><button id="btn-abrir-cl" class="boton-modal-footer">Comprar en Linea</button></li>
+                    <li><button id="btn-abrir-e" class="boton-modal-footer">Envíos</button></li>
+                    <li><button id="btn-abrir-pee" class="boton-modal-footer">Proveedores</button></li>
+                </ul>
+            </div>
+
+            <div class="links">
+                <h4>Nosotros</h4>
+                <ul>
+                    <li><a href="#">Teléfono: +57 3227622098</a></li>
+                    <li><a href="#">Dirección: Mz 12 Casa 24 Campestre D</a></li>
+                    <li><a href="#">Correo: dmpenagos16@gmail.com</a></li>
+                    <li><a href="#">Ubicación: Risaralda - Dosquebradas</a></li>
+                </ul>
+            </div>
+        </div>
+        <strong>
+            <p class="derechos">Copyright 2025 &copy; Derechos Reservador por estudiantes de la FET</p>
+        </strong>
+    </footer>
+
+    <!--MODAL CARRITO-->
+    <div id="carrito-modal" class="carrito-modal">
+        <div class="carrito-contenido">
+            <div class="carrito-header">
+                <h3>Carrito de Compras</h3>
+                <span class="cerrar-carrito">&times;</span>
+            </div>
+            <div id="carrito-items">
+            </div>
+            <div class="carrito-footer">
+                <div class="carrito-total">
+                    <strong>Total:</strong> <span id="total-precio">$0.00</span>
+                </div>
+                <button class="pagar-btn">Pagar</button>
+            </div>
+        </div>
+    </div>
+    <!--MODAL ingresar-->
+    <dialog id="modal-ingresar">
+        <button id="btn-x-cerrar-ingresar" class="btn-x">✖</button>
+        <div class="dialog-ingresar">
+            <img src="img_cat/personita1.svg" class="personita">
+            <h1>INICIO DE SESION</h1>
+            <form method="dialog-ingresar" class="ingresar-form">
+                <input type="text" placeholder="Email o usuario" required>
+                <input type="password" placeholder="Contraseña" required>
+            </form>
+            <button id="btn-cerrar-modal-ingresar" class="boton-cerrar-modal-ingresar">Ingresar</button>
+            <p>¿No estás registrado? <a href="" id="link-registrate">¡Registrate!</a></p>
+        </div>
+    </dialog>
+
+    <!--MODAL registrar-->
+    <dialog id="modal-registrar">
+        <button id="btn-x-cerrar-ingreso" class="btn-x">✖</button>
+        <div class="dialog-registrar">
+            <h1>¡REGISTRATE!</h1>
+            <form method="dialog-registrar" class="registrar-form">
+                <input type="text" placeholder="Nombre de usuario" required>
+                <input type="password" placeholder="Contraseña" required>
+                <input type="password" placeholder="Confirma tu Contraseña" required>
+            </form>
+            <button id="btn-cerrar-modal-registrar" class="boton-cerrar-modal-registrar">Ingresar</button>
+            <p>¿Ya estás registrado? <a href="" id="link-ingresar">¡Inicia sesión!</a></p>
+        </div>
+    </dialog>
+    <!--MODAL Nuestros Productos-->
+    <dialog id="modal-np">
+        <button id="btn-x-cerrar-np" class="btn-x">✖</button>
+        <div class="dialog-np">
+            <h1>¡Nuestros Productos!</h1>
+            <p>
+                En KIO Gloss, ofrecemos una amplia gama de productos de belleza y cuidado personal. Desde maquillaje
+                hasta productos para el cuidado de la piel y el cabello, tenemos todo lo que necesitas para lucir y
+                sentirte
+                increíble. Nuestros productos están diseñados para realzar tu belleza natural y brindarte la confianza
+                que
+                mereces.
+            </p>
+            <p>¿Quieres ver nuestros productos? <a href="productos.html" id="link-np">¡Click Aquí!</a></p>
+        </div>
+    </dialog>
+    <!--MODAL COMPRAR EN LINEA-->
+    <dialog id="modal-cl">
+        <button id="btn-x-cerrar-cl" class="btn-x">✖</button>
+        <div class="dialog-cl">
+            <h1>¡Comprar en Linea!</h1>
+            <p>
+                Comprar en línea es fácil y conveniente. Puedes explorar nuestra amplia selección de productos desde la
+                comodidad de tu hogar y realizar tu pedido con solo unos clics. Ofrecemos opciones de pago seguras y
+                envío
+                rápido para que recibas tus productos directamente en tu puerta.
+            </p>
+            <p>Compra ahora <a href="productos.html" id="link-cl">¡Click Aquí!</a></p>
+        </div>
+    </dialog>
+    <!--MODAL Envio-->
+    <dialog id="modal-e">
+        <button id="btn-x-cerrar-e" class="btn-x">✖</button>
+        <div class="dialog-e">
+            <h1>¡Envíos!</h1>
+            <p>
+                Ofrecemos envíos rápidos y confiables para que recibas tus productos en la puerta de tu casa. Trabajamos
+                con
+                empresas de mensajería de confianza para garantizar que tu pedido llegue a tiempo y en perfectas
+                condiciones.
+                Consulta nuestras opciones de envío y tarifas al realizar tu compra.
+            </p>
+            <p>Compra ahora <a href="productos.html" id="link-e">¡Click Aquí!</a></p>
+        </div>
+    </dialog>
+    <!--MODAL Proveedores-->
+    <dialog id="modal-pee">
+        <button id="btn-x-cerrar-pee" class="btn-x">✖</button>
+        <div class="dialog-pee">
+            <h1>¡Proveedores!</h1>
+            <p>
+                En KIO Gloss, trabajamos con proveedores de confianza para ofrecerte productos de la más alta calidad.
+                Nuestros
+                proveedores son seleccionados cuidadosamente para garantizar que cada producto cumpla con nuestros
+                estándares
+                de excelencia. Nos enorgullece colaborar con marcas reconocidas y emergentes que comparten nuestra
+                pasión por la
+                belleza y el cuidado personal.
+            </p>
+        </div>
+    </dialog>
+</body>
+
+</html>
