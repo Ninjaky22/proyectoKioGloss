@@ -568,7 +568,7 @@
         </div>
       </div>
     </div>
-    <!--MODAL ingresar-->
+
     <!--MODAL ingresar-->
     <dialog id="modal-ingresar">
       <button id="btn-x-cerrar-ingresar" class="btn-x">✖</button>
@@ -583,13 +583,32 @@
         <div class="login-contenido">
           <h1>INICIO DE SESIÓN</h1>
           <form method="dialog" class="ingresar-form">
-            <input type="text" placeholder="Email o usuario" required />
-            <input type="password" placeholder="Contraseña" required />
+            <input
+              type="email"
+              id="login-email-input"
+              placeholder="Email o usuario"
+              required
+            />
+            <div class="password-input-wrapper">
+              <input
+                type="password"
+                id="login-password-input"
+                placeholder="Contraseña"
+                required
+              />
+              <i
+                id="login-toggle-password"
+                class="password-toggle-icon fas fa-eye"
+              ></i>
+            </div>
           </form>
-          <button
-            id="btn-cerrar-modal-ingresar"
-            class="boton-cerrar-modal-ingresar"
+          <a
+            href="#"
+            id="link-recuperar-password-desde-login"
+            class="link-accion-modal"
+            >¿Olvidaste tu contraseña?</a
           >
+          <button id="btn-ingresar-submit" class="boton-accion-principal">
             Ingresar
           </button>
           <p>
@@ -608,7 +627,7 @@
       <div class="dialog-registrar-horizontal">
         <div class="registro-imagen-container">
           <img
-            src="img_cat/personita_registro.svg"
+            src="img_cat/personita1.svg"
             class="personita-registro"
             alt="Ilustración de registro"
           />
@@ -620,21 +639,36 @@
               type="text"
               placeholder="Nombre de usuario"
               name="username"
+              id="registrar-username"
               required
             />
-            <input type="email" placeholder="Email" name="email" required />
+            <input
+              type="email"
+              placeholder="Email"
+              name="email"
+              id="registrar-email"
+              required
+            />
             <input
               type="password"
               placeholder="Contraseña"
               name="password"
+              id="registrar-password-input"
               required
             />
-            <input
-              type="password"
-              placeholder="Confirma tu Contraseña"
-              name="confirm_password"
-              required
-            />
+            <div class="password-input-wrapper">
+              <input
+                type="password"
+                placeholder="Confirma tu Contraseña"
+                name="confirm_password"
+                id="registrar-confirm-password-input"
+                required
+              />
+              <i
+                id="registrar-toggle-password"
+                class="password-toggle-icon fas fa-eye"
+              ></i>
+            </div>
           </form>
           <button id="btn-submit-registrar" class="boton-submit-modal">
             Registrarse
@@ -644,6 +678,111 @@
             <a href="#" id="link-ingresar-desde-registro">¡Inicia sesión!</a>
           </p>
         </div>
+      </div>
+    </dialog>
+
+    <!--MODAL Recuperar contraseña-->
+    <dialog id="modal-recuperar-password">
+      <button id="btn-x-cerrar-recuperar" class="btn-x">✖</button>
+      <div class="dialog-recuperar-horizontal">
+        <div class="login-imagen-container">
+          <img
+            src="img_cat/personita1.svg"
+            class="personita-login"
+            alt="Ilustración de recuperación de contraseña"
+          />
+        </div>
+        <div class="recuperar-contenido">
+          <h1>RECUPERAR CONTRASEÑA</h1>
+          <p class="texto-instructivo">
+            Ingresa tu correo electrónico y te enviaremos un enlace para
+            restablecer tu contraseña.
+          </p>
+          <form method="dialog" class="recuperar-form">
+            <input
+              type="email"
+              id="recuperar-email"
+              placeholder="Tu correo electrónico"
+              required
+            />
+          </form>
+          <button id="btn-enviar-recuperacion" class="boton-accion-principal">
+            Enviar Enlace
+          </button>
+          <p>
+            <a href="#" id="link-volver-a-login" class="link-accion-modal"
+              >Volver a Inicio de Sesión</a
+            >
+          </p>
+        </div>
+      </div>
+    </dialog>
+
+    <!--MODAL Nuestros Productos-->
+    <dialog id="modal-np">
+      <button id="btn-x-cerrar-np" class="btn-x">✖</button>
+      <div class="dialog-np">
+        <h1>¡Nuestros Productos!</h1>
+        <p>
+          En KIO Gloss, ofrecemos una amplia gama de productos de belleza y
+          cuidado personal. Desde maquillaje hasta productos para el cuidado de
+          la piel y el cabello, tenemos todo lo que necesitas para lucir y
+          sentirte increíble. Nuestros productos están diseñados para realzar tu
+          belleza natural y brindarte la confianza que mereces.
+        </p>
+        <p>
+          ¿Quieres ver nuestros productos?
+          <a href="productos.html" id="link-np">¡Click Aquí!</a>
+        </p>
+      </div>
+    </dialog>
+    <!--MODAL COMPRAR EN LINEA-->
+    <dialog id="modal-cl">
+      <button id="btn-x-cerrar-cl" class="btn-x">✖</button>
+      <div class="dialog-cl">
+        <h1>¡Comprar en Linea!</h1>
+        <p>
+          Comprar en línea es fácil y conveniente. Puedes explorar nuestra
+          amplia selección de productos desde la comodidad de tu hogar y
+          realizar tu pedido con solo unos clics. Ofrecemos opciones de pago
+          seguras y envío rápido para que recibas tus productos directamente en
+          tu puerta.
+        </p>
+        <p>
+          Compra ahora <a href="productos.html" id="link-cl">¡Click Aquí!</a>
+        </p>
+      </div>
+    </dialog>
+    <!--MODAL Envio-->
+    <dialog id="modal-e">
+      <button id="btn-x-cerrar-e" class="btn-x">✖</button>
+      <div class="dialog-e">
+        <h1>¡Envíos!</h1>
+        <p>
+          Ofrecemos envíos rápidos y confiables para que recibas tus productos
+          en la puerta de tu casa. Trabajamos con empresas de mensajería de
+          confianza para garantizar que tu pedido llegue a tiempo y en perfectas
+          condiciones. Consulta nuestras opciones de envío y tarifas al realizar
+          tu compra.
+        </p>
+        <p>
+          Compra ahora <a href="productos.html" id="link-e">¡Click Aquí!</a>
+        </p>
+      </div>
+    </dialog>
+    <!--MODAL Proveedores-->
+    <dialog id="modal-pee">
+      <button id="btn-x-cerrar-pee" class="btn-x">✖</button>
+      <div class="dialog-pee">
+        <h1>¡Proveedores!</h1>
+        <p>
+          En KIO Gloss, trabajamos con proveedores de confianza para ofrecerte
+          productos de la más alta calidad. Nuestros proveedores son
+          seleccionados cuidadosamente para garantizar que cada producto cumpla
+          con nuestros estándares de excelencia. Nos enorgullece colaborar con
+          marcas reconocidas y emergentes que comparten nuestra pasión por la
+          belleza y el cuidado personal.
+        </p>
       </div>
     </dialog>
   </body>
