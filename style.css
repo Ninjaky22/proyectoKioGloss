@@ -2,14 +2,12 @@
   text-decoration: none;
 }
 
-
 body {
   background-color: #e8e0e0ea;
   padding: 0;
   margin: 0;
   font-family: sans-serif;
 }
-
 
 /*HEADER */
 header {
@@ -92,7 +90,7 @@ header {
   padding: 10px 20px;
   border-radius: 25px;
   background: #ffff;
-  color: #82256C;
+  color: #82256c;
   text-decoration: none;
   font-weight: 600;
   display: flex;
@@ -104,7 +102,7 @@ header {
 }
 
 .carrito:hover {
-  transform: translateY(-2px);
+  transform: scale(1.1);
   box-shadow: 0 5px 15px rgba(217, 224, 33, 0.3);
 }
 
@@ -127,7 +125,6 @@ header {
   transition: 0.5s;
   box-shadow: #b4b4b4 2px 2px 10px 1px;
 }
-
 /*FIN DEL HEADER*/
 
 /*  /////REDES/////  */
@@ -174,7 +171,6 @@ header {
 }
 
 /* FOOTER */
-
 .derechos {
   display: flex;
   justify-content: center;
@@ -219,7 +215,6 @@ footer {
   margin-bottom: 13px;
   display: inline-block;
   font-weight: lighter;
-
 }
 
 .links h4 {
@@ -229,7 +224,6 @@ footer {
   color: white;
   text-shadow: black 1px 1px 5px;
   letter-spacing: 2px;
-
 }
 
 .links ul {
@@ -257,9 +251,7 @@ footer {
   color: #000000;
   transition: 0.3s;
 }
-
 /* FIN FOOTER*/
-
 
 /* INICIO DEL CARRUSEL */
 .nav2 {
@@ -367,7 +359,6 @@ iframe {
 }
 
 /*  /////MODAL INGRESAR/////  */
-
 #modal-ingresar {
   max-width: 50ch;
   min-width: 35ch;
@@ -435,7 +426,6 @@ iframe {
 .dialog.fade-out {
   animation: fadeOutDown 0.3s ease-in forwards;
 }
-
 
 .dialog-ingresar {
   animation: fadeInUp 0.3s ease-out;
@@ -505,7 +495,6 @@ iframe {
 }
 
 /*  /////MODAL REGISTRAR/////  */
-
 #modal-registrar {
   max-width: 50ch;
   min-width: 35ch;
@@ -552,7 +541,6 @@ iframe {
 .dialog.fade-out {
   animation: fadeOutDown 0.3s ease-in forwards;
 }
-
 
 .dialog-registrar {
   animation: fadeInUp 0.3s ease-out;
@@ -620,11 +608,9 @@ iframe {
   transform: scale(1.05);
   box-shadow: #b4b4b4 2px 2px 10px 1px;
 }
-
 /*FIN MODAL REGISTRAR */
 
 /*  /////MODAL NUESTROS PRODUCTOS/////  */
-
 #modal-np {
   max-width: 50ch;
   min-width: 35ch;
@@ -671,7 +657,6 @@ iframe {
 .dialog.fade-out {
   animation: fadeOutDown 0.3s ease-in forwards;
 }
-
 
 .dialog-np {
   animation: fadeInUp 0.3s ease-out;
@@ -744,11 +729,9 @@ iframe {
   transform: scale(1.05);
   box-shadow: #b4b4b4 2px 2px 10px 1px;
 }
-
 /*FIN MODAL NUESTROS PRODUCTOS */
 
 /*  /////MODAL COMPRAS EN LINEA/////  */
-
 #modal-cl {
   max-width: 50ch;
   min-width: 35ch;
@@ -795,7 +778,6 @@ iframe {
 .dialog.fade-out {
   animation: fadeOutDown 0.3s ease-in forwards;
 }
-
 
 .dialog-cl {
   animation: fadeInUp 0.3s ease-out;
@@ -868,11 +850,9 @@ iframe {
   transform: scale(1.05);
   box-shadow: #b4b4b4 2px 2px 10px 1px;
 }
-
 /*FIN MODAL COMPRAS EN LINEA */
 
 /*  /////MODAL ENVIOS/////  */
-
 #modal-e {
   max-width: 50ch;
   min-width: 35ch;
@@ -919,7 +899,6 @@ iframe {
 .dialog.fade-out {
   animation: fadeOutDown 0.3s ease-in forwards;
 }
-
 
 .dialog-e {
   animation: fadeInUp 0.3s ease-out;
@@ -992,11 +971,9 @@ iframe {
   transform: scale(1.05);
   box-shadow: #b4b4b4 2px 2px 10px 1px;
 }
-
 /*FIN MODAL ENVIOS */
 
 /*  /////MODAL PROVEEDORES/////  */
-
 #modal-pee {
   max-width: 50ch;
   min-width: 35ch;
@@ -1043,7 +1020,6 @@ iframe {
 .dialog.fade-out {
   animation: fadeOutDown 0.3s ease-in forwards;
 }
-
 
 .dialog-pee {
   animation: fadeInUp 0.3s ease-out;
@@ -1116,7 +1092,6 @@ iframe {
   transform: scale(1.05);
   box-shadow: #b4b4b4 2px 2px 10px 1px;
 }
-
 /*FIN MODAL PROVEEDORES */
 
 .redes1 {
@@ -1154,7 +1129,6 @@ iframe {
   align-items: center;
   gap: 10px;
   justify-content: space-around;
-
 }
 
 .whatsapp a {
@@ -1200,7 +1174,7 @@ iframe {
 }
 
 .img-footer:hover {
-  transform: scale(1.10);
+  transform: scale(1.1);
   transition: 0.5s;
 }
 
@@ -1220,9 +1194,9 @@ iframe {
 }
 
 .featured-products h2 {
-  color: #4A4A4A;
+  color: #4a4a4a;
   margin-bottom: 25px;
-  font-family: 'Arial', sans-serif;
+  font-family: "Arial", sans-serif;
 }
 
 .slider-container {
@@ -1242,8 +1216,8 @@ iframe {
 
 .product-card {
   flex: 0 0 auto;
-  width: 240px;
-  border: 1px solid #E0E0E0;
+  width: 250px;
+  border: 1px solid #e0e0e0;
   border-radius: 10px;
   margin-right: 20px;
   padding: 20px;
@@ -1266,7 +1240,7 @@ iframe {
 }
 
 .product-card .product-info .description {
-  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 1.1em;
   color: #333;
   font-weight: 600;
@@ -1318,24 +1292,4 @@ iframe {
 .product-card-link:last-child {
   margin-right: 0;
 }
-
-
 /*FIN CONTENEDOR SLIDER*/
-@media only screen and (max-width: 1024px) {
-  .sticky-social a {
-    height: 32px;
-  }
-
-  .sticky-social-conteiner {
-    left: -165px;
-
-  }
-
-  .sticky-social a:hover {
-    margin-right: -100px;
-  }
-
-  .sticky-social a i {
-    font-size: 20px;
-  }
-}
