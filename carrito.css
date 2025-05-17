@@ -80,6 +80,18 @@
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
 }
 
+.carrito-item-imagen {
+  width: auto;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+.carrito-item {
+  display: flex;
+  align-items: center;
+}
+
 /* ========== SELECTOR DE CANTIDAD ========== */
 .quantity-selector {
   display: flex;
@@ -232,9 +244,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 15px;
   border-bottom: 1px solid #ccc;
-  padding-bottom: 10px;
 }
 
 .cerrar-carrito {

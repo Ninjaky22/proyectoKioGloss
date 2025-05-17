@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
   // --- Funcionalidad del Carrito Modal ---
   const carritoModal = document.getElementById("carrito-modal");
-  const carritoBtn = document.querySelector(".carrito");
+  const carritoBtn = document.querySelector(".carrito"); // Asumiendo que tienes un botón con clase "carrito" para abrir el modal
   const cerrarCarritoBtn = document.querySelector(".cerrar-carrito");
   const carritoItemsContainer = document.getElementById("carrito-items");
   const totalPrecioSpan = document.getElementById("total-precio");
@@ -29,7 +29,16 @@ document.addEventListener("DOMContentLoaded", () => {
     cart.forEach((item, index) => {
       const carritoItem = document.createElement("div");
       carritoItem.classList.add("carrito-item");
+
+      // Obtener la URL de la imagen. Puedes añadir una imagen por defecto si item.imageSrc no existe.
+      const imageUrl = item.imageSrc
+        ? item.imageSrc
+        : "img_cat/default-placeholder.png"; // CAMBIA 'img_cat/default-placeholder.png' SI QUIERES UNA IMAGEN POR DEFECTO
+
       carritoItem.innerHTML = `
+                <img src="${imageUrl}" alt="${
+        item.name
+      }" class="carrito-item-imagen">
                 <div class="carrito-item-detalles">
                     <p class="carrito-item-nombre">${item.name}</p>
                     <p class="carrito-item-precio">$${item.total.toFixed(2)}</p>
@@ -130,15 +139,15 @@ document.addEventListener("DOMContentLoaded", () => {
     .querySelectorAll(".product-card .product-actions .buy-btn")
     .forEach((btn) => {
       btn.addEventListener("click", () => {
+        // Ya 'product' contendrá 'imageSrc' si lo añadiste al data-product
         const product = JSON.parse(btn.dataset.product);
-        // Subimos dos niveles para llegar al .product-card y luego buscamos .quantity-input
         const quantityInput = btn
           .closest(".product-card")
           .querySelector(".quantity-selector .quantity-input");
         const quantity = parseInt(quantityInput.value);
 
         const cartItem = {
-          ...product,
+          ...product, // Esto ya incluye name, price, y ahora imageSrc
           quantity,
           total: product.price * quantity,
         };
@@ -186,8 +195,6 @@ document.addEventListener("DOMContentLoaded", () => {
         input.value = value + 1;
       }
     });
-  });
-
-  // Inicializar la UI del carrito al cargar la página
+  });s
   actualizarCarritoUI();
 });
