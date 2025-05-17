@@ -1,212 +1,534 @@
-function accion() {
-  var ancla = document.getElementsByClassName("nav-links");
-  for (var i = 0; i < ancla.length; i++) {
-    ancla[i].classList.toggle("desaparece");
+document.addEventListener("DOMContentLoaded", function () {
+  const ANIMATION_DURATION = 300; // Duración de la animación
+
+  // --- DECLARAR VARIABLES DE MODALES PRINCIPALES Y SUS CONTENIDOS AQUÍ ARRIBA ---
+  let modalIngresar = null;
+  let dialogContentIngresar = null;
+  let modalRecuperar = null;
+  let dialogContentRecuperar = null;
+  let modalRegistrar = null;
+  let dialogContentRegistrar = null;
+  // Declara aquí otras variables de modal/contenido si necesitas acceder a ellas desde diferentes bloques
+
+  // --- FUNCIONES GENÉRICAS PARA MODALES ---
+  function abrirModal(modalElement, contentElement) {
+    if (!modalElement || !contentElement) {
+      console.error(
+        "Error al abrir: Elemento del modal o su contenido no encontrado.",
+        modalElement,
+        contentElement
+      );
+      return;
+    }
+    modalElement.showModal();
+    contentElement.classList.remove("fade-out");
+    void contentElement.offsetWidth; // Forzar reflow
   }
-}
 
-// MODAL INGRESAR//
+  function cerrarModalConAnimacion(modalElement, contentElement, callback) {
+    if (!modalElement || !contentElement) {
+      console.error(
+        "Error al cerrar: Elemento del modal o su contenido no encontrado.",
+        modalElement,
+        contentElement
+      );
+      if (modalElement && typeof modalElement.close === "function")
+        modalElement.close();
+      if (callback) callback();
+      return;
+    }
+    contentElement.classList.add("fade-out");
+    setTimeout(() => {
+      if (typeof modalElement.close === "function") modalElement.close();
+      contentElement.classList.remove("fade-out");
+      if (callback) callback();
+    }, ANIMATION_DURATION);
+  }
 
-const btnabrirmodal = document.querySelector("#btn-abrir-ingresar");
-const btncerrarmodal = document.querySelector("#btn-cerrar-modal-ingresar");
-const btnXcerrar = document.querySelector("#btn-x-cerrar-ingresar");
-const modal = document.querySelector("#modal-ingresar");
-const dialogContent = modal.querySelector(".dialog-ingresar");
+  // --- MODAL INGRESAR ---
+  const btnAbrirModalIngresar = document.querySelector("#btn-abrir-ingresar");
+  modalIngresar = document.querySelector("#modal-ingresar"); // Asigna a la variable de alcance superior
 
-btnabrirmodal.addEventListener("click", () => {
-  modal.showModal();
-  dialogContent.classList.remove("fade-out");
-  void dialogContent.offsetWidth;
-  dialogContent.classList.add("dialog-ingresar");
-});
+  if (modalIngresar) {
+    console.log("#modal-ingresar encontrado.");
+    // Asigna a la variable de alcance superior
+    dialogContentIngresar = modalIngresar.querySelector(
+      ".dialog-ingresar-horizontal"
+    );
 
-function cerrarModalConAnimacion() {
-  dialogContent.classList.add("fade-out");
+    // Las siguientes son locales a este bloque if, si no se necesitan fuera
+    const btnXCerrarIngresar = modalIngresar.querySelector(
+      "#btn-x-cerrar-ingresar"
+    );
+    const btnIngresarSubmit = modalIngresar.querySelector(
+      "#btn-ingresar-submit"
+    );
+    const linkRegistrateDesdeIngresar =
+      modalIngresar.querySelector("#link-registrate");
+    const linkRecuperarDesdeLogin = modalIngresar.querySelector(
+      "#link-recuperar-password-desde-login"
+    );
+    const loginPasswordInput = modalIngresar.querySelector(
+      "#login-password-input"
+    );
+    const loginTogglePassword = modalIngresar.querySelector(
+      "#login-toggle-password"
+    );
 
-  setTimeout(() => {
-    modal.close();
-    dialogContent.classList.remove("fade-out");
-  }, 300);
-}
+    if (!dialogContentIngresar) {
+      // Chequeo importante
+      console.error(
+        "ERROR CRÍTICO: .dialog-ingresar-horizontal no encontrado dentro de #modal-ingresar."
+      );
+    }
 
-btncerrarmodal.addEventListener("click", cerrarModalConAnimacion);
-btnXcerrar.addEventListener("click", cerrarModalConAnimacion);
+    if (loginPasswordInput && loginTogglePassword) {
+      loginTogglePassword.addEventListener("click", function () {
+        const currentType = loginPasswordInput.getAttribute("type");
+        const newType = currentType === "password" ? "text" : "password";
+        loginPasswordInput.setAttribute("type", newType);
+        this.classList.toggle("fa-eye");
+        this.classList.toggle("fa-eye-slash");
+      });
+      console.log("FUNCIONALIDAD OJITO: Configurada para #modal-ingresar.");
+    } else {
+      console.warn(
+        "ADVERTENCIA OJITO: Elementos para el toggle de contraseña en #modal-ingresar no encontrados."
+      );
+      if (!loginPasswordInput)
+        console.warn(
+          " > login-password-input NO encontrado dentro de #modal-ingresar."
+        );
+      if (!loginTogglePassword)
+        console.warn(
+          " > login-toggle-password NO encontrado dentro de #modal-ingresar."
+        );
+    }
 
-const linkRegistrarse = document.querySelector("#link-registrate");
+    if (btnAbrirModalIngresar) {
+      btnAbrirModalIngresar.addEventListener("click", () => {
+        if (modalIngresar && dialogContentIngresar) {
+          // Siempre verifica ambas
+          abrirModal(modalIngresar, dialogContentIngresar);
+        } else {
+          console.error(
+            "Error al intentar abrir modal-ingresar: modal o contenido no están listos."
+          );
+        }
+      });
+    } else {
+      console.warn(
+        "Advertencia: #btn-abrir-ingresar no encontrado en el documento."
+      );
+    }
 
-linkRegistrarse.addEventListener("click", (e) => {
-  e.preventDefault();
+    if (btnXCerrarIngresar) {
+      btnXCerrarIngresar.addEventListener("click", () => {
+        if (modalIngresar && dialogContentIngresar)
+          cerrarModalConAnimacion(modalIngresar, dialogContentIngresar);
+      });
+    } else {
+      console.warn(
+        "Advertencia: #btn-x-cerrar-ingresar no encontrado dentro de #modal-ingresar."
+      );
+    }
 
-  dialogContent.classList.add("fade-out");
+    if (btnIngresarSubmit) {
+      btnIngresarSubmit.addEventListener("click", (e) => {
+        console.log("Intento de inicio de sesión...");
+      });
+    } else {
+      console.warn(
+        "Advertencia: #btn-ingresar-submit no encontrado dentro de #modal-ingresar."
+      );
+    }
 
-  setTimeout(() => {
-    modal.close();
-    dialogContent.classList.remove("fade-out");
+    if (linkRecuperarDesdeLogin) {
+      linkRecuperarDesdeLogin.addEventListener("click", (e) => {
+        e.preventDefault();
+        // modalRecuperar y dialogContentRecuperar deben estar asignados en su bloque
+        if (
+          modalRecuperar &&
+          dialogContentRecuperar &&
+          modalIngresar &&
+          dialogContentIngresar
+        ) {
+          cerrarModalConAnimacion(modalIngresar, dialogContentIngresar, () => {
+            abrirModal(modalRecuperar, dialogContentRecuperar);
+          });
+        } else {
+          console.error(
+            "Error al transitar a recuperar: falta algún modal/contenido esencial."
+          );
+          if (!modalRecuperar) console.log(" > modalRecuperar falta");
+          if (!dialogContentRecuperar)
+            console.log(" > dialogContentRecuperar falta");
+        }
+      });
+    } else {
+      console.warn(
+        "Advertencia: #link-recuperar-password-desde-login no encontrado dentro de #modal-ingresar."
+      );
+    }
 
-    // Abre modal registrar con animación
-    modalRegistrar.showModal();
-    dialogContentRegistrar.classList.remove("fade-out");
-    void dialogContentRegistrar.offsetWidth;
-    dialogContentRegistrar.classList.add("dialog-registrar");
-  }, 300);
-});
-// FIN MODAL INGRESAR//
+    if (linkRegistrateDesdeIngresar) {
+      linkRegistrateDesdeIngresar.addEventListener("click", (e) => {
+        e.preventDefault();
+        // modalRegistrar y dialogContentRegistrar deben estar asignados en su bloque
+        if (
+          modalRegistrar &&
+          dialogContentRegistrar &&
+          modalIngresar &&
+          dialogContentIngresar
+        ) {
+          cerrarModalConAnimacion(modalIngresar, dialogContentIngresar, () => {
+            abrirModal(modalRegistrar, dialogContentRegistrar);
+          });
+        } else {
+          console.error(
+            "Error al transitar a registrar: falta algún modal/contenido esencial."
+          );
+        }
+      });
+    } else {
+      console.warn(
+        "Advertencia: #link-registrate no encontrado dentro de #modal-ingresar."
+      );
+    }
+  } else {
+    console.error(
+      "ERROR CRÍTICO: #modal-ingresar no encontrado en el DOM. Su funcionalidad no se activará."
+    );
+  }
 
-// MODAL REGISTRAR //
-const btnAbrirModalRegistrar = document.querySelector("#btn-abrir-registrar");
-const btnCerrarModalRegistrar = document.querySelector(
-  "#btn-cerrar-modal-registrar"
-);
-const btnXCerrarRegistrar = document.querySelector("#btn-x-cerrar-ingreso");
-const modalRegistrar = document.querySelector("#modal-registrar");
-const dialogContentRegistrar =
-  modalRegistrar.querySelector(".dialog-registrar");
+  // --- MODAL RECUPERAR CONTRASEÑA ---
+  modalRecuperar = document.querySelector("#modal-recuperar-password"); // Asigna a la variable de alcance superior
 
-btnAbrirModalRegistrar.addEventListener("click", () => {
-  modalRegistrar.showModal();
-  dialogContentRegistrar.classList.remove("fade-out");
-  void dialogContentRegistrar.offsetWidth;
-  dialogContentRegistrar.classList.add("dialog-registrar");
-});
+  if (modalRecuperar) {
+    console.log("#modal-recuperar-password encontrado.");
+    // Asigna a la variable de alcance superior
+    dialogContentRecuperar = modalRecuperar.querySelector(
+      ".dialog-recuperar-horizontal"
+    );
 
-function cerrarModalRegistrarConAnimacion() {
-  dialogContentRegistrar.classList.add("fade-out");
+    const btnXCerrarRecuperar = modalRecuperar.querySelector(
+      "#btn-x-cerrar-recuperar"
+    );
+    const btnEnviarRecuperacion = modalRecuperar.querySelector(
+      "#btn-enviar-recuperacion"
+    );
+    const linkVolverALogin = modalRecuperar.querySelector(
+      "#link-volver-a-login"
+    );
+    const emailRecuperarInput =
+      modalRecuperar.querySelector("#recuperar-email");
 
-  setTimeout(() => {
-    modalRegistrar.close();
-    dialogContentRegistrar.classList.remove("fade-out");
-  }, 300);
-}
+    if (!dialogContentRecuperar) {
+      // Chequeo importante
+      console.error(
+        "ERROR CRÍTICO: .dialog-recuperar-horizontal no encontrado dentro de #modal-recuperar-password."
+      );
+    }
 
-btnCerrarModalRegistrar.addEventListener(
-  "click",
-  cerrarModalRegistrarConAnimacion
-);
-btnXCerrarRegistrar.addEventListener("click", cerrarModalRegistrarConAnimacion);
+    if (btnXCerrarRecuperar) {
+      btnXCerrarRecuperar.addEventListener("click", () => {
+        if (modalRecuperar && dialogContentRecuperar)
+          cerrarModalConAnimacion(modalRecuperar, dialogContentRecuperar);
+      });
+    } else {
+      console.warn(
+        "Advertencia: #btn-x-cerrar-recuperar no encontrado dentro de #modal-recuperar-password."
+      );
+    }
 
-const linkIngresar = document.querySelector("#link-ingresar");
+    if (btnEnviarRecuperacion && emailRecuperarInput) {
+      btnEnviarRecuperacion.addEventListener("click", () => {
+        const email = emailRecuperarInput.value;
+        if (email) {
+          console.log("Enviar enlace de recuperación a:", email);
+          alert(
+            `Se enviaría un enlace de recuperación a: ${email} (simulación)`
+          );
+        } else {
+          alert("Por favor, ingresa tu correo electrónico.");
+        }
+      });
+    } else {
+      if (!btnEnviarRecuperacion)
+        console.warn("Advertencia: #btn-enviar-recuperacion no encontrado.");
+      if (!emailRecuperarInput)
+        console.warn("Advertencia: #recuperar-email no encontrado.");
+    }
 
-linkIngresar.addEventListener("click", (e) => {
-  e.preventDefault();
-  dialogContentRegistrar.classList.add("fade-out");
-  setTimeout(() => {
-    modalRegistrar.close();
-    dialogContentRegistrar.classList.remove("fade-out");
-    modal.showModal();
-    dialogContent.classList.remove("fade-out");
-    void dialogContent.offsetWidth;
-    dialogContent.classList.add("dialog-ingresar");
-  }, 300);
-});
-// FIN MODAL REGISTRAR //
+    if (linkVolverALogin) {
+      linkVolverALogin.addEventListener("click", (e) => {
+        e.preventDefault();
+        // AHORA modalIngresar y dialogContentIngresar SON ACCESIBLES CORRECTAMENTE
+        if (
+          modalIngresar &&
+          dialogContentIngresar &&
+          modalRecuperar &&
+          dialogContentRecuperar
+        ) {
+          cerrarModalConAnimacion(
+            modalRecuperar,
+            dialogContentRecuperar,
+            () => {
+              abrirModal(modalIngresar, dialogContentIngresar);
+            }
+          );
+        } else {
+          console.error(
+            "Error al volver a login: falta modalIngresar o dialogContentIngresar o el modal de recuperación actual."
+          );
+          if (!modalIngresar) console.log(" > modalIngresar es null/undefined");
+          if (!dialogContentIngresar)
+            console.log(" > dialogContentIngresar es null/undefined");
+        }
+      });
+    } else {
+      console.warn(
+        "Advertencia: #link-volver-a-login no encontrado dentro de #modal-recuperar-password."
+      );
+    }
+  } else {
+    console.warn(
+      "Advertencia: #modal-recuperar-password no encontrado en el DOM."
+    );
+  }
 
-// MODAL NUESTROS PRODUCTOS //
-const btnAbrirModalnp = document.querySelector("#btn-abrir-np");
-const btnXCerrarnp = document.querySelector("#btn-x-cerrar-np");
-const modalnp = document.querySelector("#modal-np");
-const dialogContentnp = modalnp.querySelector(".dialog-np");
+  // --- MODAL REGISTRAR ---
+  const btnAbrirModalRegistrar = document.querySelector("#btn-abrir-registrar");
+  modalRegistrar = document.querySelector("#modal-registrar"); // Asigna a variable de alcance superior
 
-btnAbrirModalnp.addEventListener("click", () => {
-  modalnp.showModal();
-  dialogContentnp.classList.remove("fade-out");
-  void dialogContentnp.offsetWidth;
-  dialogContentnp.classList.add("dialog-np");
-});
+  if (modalRegistrar) {
+    console.log("#modal-registrar encontrado.");
+    // Asigna a variable de alcance superior
+    dialogContentRegistrar = modalRegistrar.querySelector(
+      ".dialog-registrar-horizontal"
+    );
 
-function cerrarModalnpConAnimacion() {
-  dialogContentnp.classList.add("fade-out");
-  setTimeout(() => {
-    modalnp.close();
-    dialogContentnp.classList.remove("fade-out");
-  }, 300);
-}
-btnXCerrarnp.addEventListener("click", cerrarModalnpConAnimacion);
-const linknp = document.querySelector("#link-np");
-// FIN MODAL NUESTROS PRODUCTOS //
+    const btnXCerrarRegistrar = modalRegistrar.querySelector(
+      "#btn-x-cerrar-registrar"
+    );
+    const btnSubmitRegistrar = modalRegistrar.querySelector(
+      "#btn-submit-registrar"
+    );
+    const linkIngresarDesdeRegistro = modalRegistrar.querySelector(
+      "#link-ingresar-desde-registro"
+    );
 
-// MODAL COMPRAR EN LINEA //
-const btnAbrirModalcl = document.querySelector("#btn-abrir-cl");
-const btnXCerrarcl = document.querySelector("#btn-x-cerrar-cl");
-const modalcl = document.querySelector("#modal-cl");
-const dialogContentcl = modalcl.querySelector(".dialog-cl");
+    const registrarPasswordInput = modalRegistrar.querySelector(
+      "#registrar-password-input"
+    );
+    const registrarConfirmPasswordInput = modalRegistrar.querySelector(
+      "#registrar-confirm-password-input"
+    );
+    const registrarTogglePassword = modalRegistrar.querySelector(
+      "#registrar-toggle-password"
+    );
 
-btnAbrirModalcl.addEventListener("click", () => {
-  modalcl.showModal();
-  dialogContentcl.classList.remove("fade-out");
-  void dialogContentcl.offsetWidth;
-  dialogContentcl.classList.add("dialog-cl");
-});
+    if (
+      registrarPasswordInput &&
+      registrarConfirmPasswordInput &&
+      registrarTogglePassword
+    ) {
+      registrarTogglePassword.addEventListener("click", function () {
+        // Determinar el nuevo tipo (text o password) basándose en el campo de contraseña principal
+        const currentType = registrarPasswordInput.getAttribute("type");
+        const newType = currentType === "password" ? "text" : "password";
 
-function cerrarModalclConAnimacion() {
-  dialogContentcl.classList.add("fade-out");
-  setTimeout(() => {
-    modalcl.close();
-    dialogContentcl.classList.remove("fade-out");
-  }, 300);
-}
-btnXCerrarcl.addEventListener("click", cerrarModalclConAnimacion);
-const linkcl = document.querySelector("#link-cl");
-// FIN MODAL COMPRAR EN LINEA //
+        // Aplicar el nuevo tipo a AMBOS campos de contraseña
+        registrarPasswordInput.setAttribute("type", newType);
+        registrarConfirmPasswordInput.setAttribute("type", newType);
 
-// MODAL ENVIOS //
-const btnAbrirModale = document.querySelector("#btn-abrir-e");
-const btnXCerrare = document.querySelector("#btn-x-cerrar-e");
-const modale = document.querySelector("#modal-e");
-const dialogContente = modale.querySelector(".dialog-e");
+        // Cambiar el ícono del ojo
+        this.classList.toggle("fa-eye");
+        this.classList.toggle("fa-eye-slash");
+      });
+      console.log("FUNCIONALIDAD OJITO: Configurada para #modal-registrar.");
+    } else {
+      console.warn(
+        "ADVERTENCIA OJITO (REGISTRO): Elementos para el toggle de contraseña en #modal-registrar no encontrados."
+      );
+      if (!registrarPasswordInput)
+        console.warn(" > registrar-password-input NO encontrado.");
+      if (!registrarConfirmPasswordInput)
+        console.warn(" > registrar-confirm-password-input NO encontrado.");
+      if (!registrarTogglePassword)
+        console.warn(" > registrar-toggle-password NO encontrado.");
+    }
+    // --- FIN DE NUEVA FUNCIONALIDAD OJITO ---
 
-btnAbrirModale.addEventListener("click", () => {
-  modale.showModal();
-  dialogContente.classList.remove("fade-out");
-  void dialogContente.offsetWidth;
-  dialogContente.classList.add("dialog-e");
-});
+    if (!dialogContentRegistrar) {
+      // Chequeo importante
+      console.error(
+        "ERROR CRÍTICO: .dialog-registrar-horizontal no encontrado dentro de #modal-registrar."
+      );
+    }
 
-function cerrarModaleConAnimacion() {
-  dialogContente.classList.add("fade-out");
-  setTimeout(() => {
-    modale.close();
-    dialogContente.classList.remove("fade-out");
-  }, 300);
-}
-btnXCerrare.addEventListener("click", cerrarModaleConAnimacion);
-const linke = document.querySelector("#link-e");
-// FIN MODAL ENVIOS //
+    if (btnAbrirModalRegistrar) {
+      btnAbrirModalRegistrar.addEventListener("click", () => {
+        if (modalRegistrar && dialogContentRegistrar)
+          abrirModal(modalRegistrar, dialogContentRegistrar);
+      });
+    } else {
+      console.warn("Advertencia: #btn-abrir-registrar no encontrado.");
+    }
 
-// MODAL PROVEEDORES //
-const btnAbrirModalpee = document.querySelector("#btn-abrir-pee");
-const btnXCerrarpee = document.querySelector("#btn-x-cerrar-pee");
-const modalpee = document.querySelector("#modal-pee");
-const dialogContentpee = modalpee.querySelector(".dialog-pee");
+    if (btnXCerrarRegistrar) {
+      btnXCerrarRegistrar.addEventListener("click", () => {
+        if (modalRegistrar && dialogContentRegistrar)
+          cerrarModalConAnimacion(modalRegistrar, dialogContentRegistrar);
+      });
+    } else {
+      console.warn("Advertencia: #btn-x-cerrar-registrar no encontrado.");
+    }
 
-btnAbrirModalpee.addEventListener("click", () => {
-  modalpee.showModal();
-  dialogContentpee.classList.remove("fade-out");
-  void dialogContentpee.offsetWidth;
-  dialogContentpee.classList.add("dialog-pee");
-});
+    if (btnSubmitRegistrar) {
+      btnSubmitRegistrar.addEventListener("click", (event) => {
+        console.log("Formulario de registro 'enviado' (simulación)");
+      });
+    } else {
+      console.warn("Advertencia: #btn-submit-registrar no encontrado.");
+    }
 
-function cerrarModalpeeConAnimacion() {
-  dialogContentpee.classList.add("fade-out");
-  setTimeout(() => {
-    modalpee.close();
-    dialogContentpee.classList.remove("fade-out");
-  }, 300);
-}
-btnXCerrarpee.addEventListener("click", cerrarModalpeeConAnimacion);
-const linkpee = document.querySelector("#link-pee");
-// FIN MODAL PROOVEDORES //
+    if (linkIngresarDesdeRegistro) {
+      linkIngresarDesdeRegistro.addEventListener("click", (e) => {
+        e.preventDefault();
+        if (
+          modalIngresar &&
+          dialogContentIngresar &&
+          modalRegistrar &&
+          dialogContentRegistrar
+        ) {
+          cerrarModalConAnimacion(
+            modalRegistrar,
+            dialogContentRegistrar,
+            () => {
+              abrirModal(modalIngresar, dialogContentIngresar);
+            }
+          );
+        } else {
+          console.error(
+            "Error al volver a login desde registro: falta algún modal/contenido esencial."
+          );
+        }
+      });
+    } else {
+      console.warn("Advertencia: #link-ingresar-desde-registro no encontrado.");
+    }
+  } else {
+    console.warn("Advertencia: #modal-registrar no encontrado en el DOM.");
+  }
 
-// REDIRECCIÓN LOGO //
-const logoLink = document.getElementById("logo-link");
-const esInicio =
-  window.location.pathname.endsWith("index.html") ||
-  window.location.pathname === "/";
+  // --- OTROS MODALES (Aplica el mismo patrón de declaración de variables y asignación) ---
+  // Recuerda declarar 'let modalXX = null;' y 'let dialogContentXX = null;' al principio del DOMContentLoaded
+  // si estos modales necesitan interactuar entre sí o ser referenciados desde otros bloques.
 
-if (!esInicio) {
-  logoLink.href = "index.html";
-} else {
-  logoLink.addEventListener("click", function (e) {
-    e.preventDefault();
-  });
-}
-//FIN REDIRECCIÓN LOGO //
+  // MODAL NUESTROS PRODUCTOS
+  const modalnp = document.querySelector("#modal-np");
+  if (modalnp) {
+    const btnAbrirModalnp = document.querySelector("#btn-abrir-np");
+    const btnXCerrarnp = modalnp.querySelector("#btn-x-cerrar-np");
+    const dialogContentnp = modalnp.querySelector(".dialog-np"); // Asumimos que esta clase existe
+    if (dialogContentnp) {
+      // Solo añade listeners si el contenido existe
+      if (btnAbrirModalnp)
+        btnAbrirModalnp.addEventListener("click", () =>
+          abrirModal(modalnp, dialogContentnp)
+        );
+      if (btnXCerrarnp)
+        btnXCerrarnp.addEventListener("click", () =>
+          cerrarModalConAnimacion(modalnp, dialogContentnp)
+        );
+    } else {
+      console.warn(
+        "Advertencia: .dialog-np no encontrado en #modal-np. Listeners no añadidos."
+      );
+    }
+  }
+
+  // MODAL COMPRAR EN LINEA
+  const modalcl = document.querySelector("#modal-cl");
+  if (modalcl) {
+    const btnAbrirModalcl = document.querySelector("#btn-abrir-cl");
+    const btnXCerrarcl = modalcl.querySelector("#btn-x-cerrar-cl");
+    const dialogContentcl = modalcl.querySelector(".dialog-cl");
+    if (dialogContentcl) {
+      if (btnAbrirModalcl)
+        btnAbrirModalcl.addEventListener("click", () =>
+          abrirModal(modalcl, dialogContentcl)
+        );
+      if (btnXCerrarcl)
+        btnXCerrarcl.addEventListener("click", () =>
+          cerrarModalConAnimacion(modalcl, dialogContentcl)
+        );
+    } else {
+      console.warn(
+        "Advertencia: .dialog-cl no encontrado en #modal-cl. Listeners no añadidos."
+      );
+    }
+  }
+
+  // MODAL ENVIOS
+  const modale = document.querySelector("#modal-e");
+  if (modale) {
+    const btnAbrirModale = document.querySelector("#btn-abrir-e");
+    const btnXCerrare = modale.querySelector("#btn-x-cerrar-e");
+    const dialogContente = modale.querySelector(".dialog-e");
+    if (dialogContente) {
+      if (btnAbrirModale)
+        btnAbrirModale.addEventListener("click", () =>
+          abrirModal(modale, dialogContente)
+        );
+      if (btnXCerrare)
+        btnXCerrare.addEventListener("click", () =>
+          cerrarModalConAnimacion(modale, dialogContente)
+        );
+    } else {
+      console.warn(
+        "Advertencia: .dialog-e no encontrado en #modal-e. Listeners no añadidos."
+      );
+    }
+  }
+
+  // MODAL PROVEEDORES
+  const modalpee = document.querySelector("#modal-pee");
+  if (modalpee) {
+    const btnAbrirModalpee = document.querySelector("#btn-abrir-pee");
+    const btnXCerrarpee = modalpee.querySelector("#btn-x-cerrar-pee");
+    const dialogContentpee = modalpee.querySelector(".dialog-pee");
+    if (dialogContentpee) {
+      if (btnAbrirModalpee)
+        btnAbrirModalpee.addEventListener("click", () =>
+          abrirModal(modalpee, dialogContentpee)
+        );
+      if (btnXCerrarpee)
+        btnXCerrarpee.addEventListener("click", () =>
+          cerrarModalConAnimacion(modalpee, dialogContentpee)
+        );
+    } else {
+      console.warn(
+        "Advertencia: .dialog-pee no encontrado en #modal-pee. Listeners no añadidos."
+      );
+    }
+  }
+
+  // --- REDIRECCIÓN LOGO ---
+  const logoLink = document.getElementById("logo-link");
+  if (logoLink) {
+    const esInicio =
+      window.location.pathname.endsWith("index.html") ||
+      window.location.pathname === "/";
+    if (!esInicio) {
+      logoLink.href = "index.html";
+    } else {
+      logoLink.addEventListener("click", function (e) {
+        e.preventDefault();
+      });
+    }
+  } else {
+    console.warn("Advertencia: #logo-link no encontrado.");
+  }
+}); // Fin del DOMContentLoaded

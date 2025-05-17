@@ -15,16 +15,17 @@
   font-family: Caveat;
   font-weight: bold;
   text-align: center;
+  display: inline-block;
+  transform: scale(1);
+  box-shadow: none;
+  transition: all 0.3s ease;
 }
 
 .anclas:hover {
-  color: #000000ea;
   text-shadow: #000000ea 1px 1px 5px;
-  transform: translateY(-3px);
+  transform: scale(1.05);
   background-color: rgb(209, 65, 238);
-  border-radius: 25px;
-  transition: 0.5s;
-  box-shadow: #b4b4b4 2px 2px 10px 1px;
+  box-shadow: #b4b4b4 0 2px 5px;
 }
 
 .nav-links:hover {
@@ -36,20 +37,15 @@
 }
 
 /* PRODUCT GRID STYLES */
-.product-grid-section {
-  padding: 0px 20px 20px 20px;
-}
-
 .section-title {
   text-align: center;
-  margin: 0px 0px 15px 0px;
   color: #4c006d;
 }
 
 .products-grid {
   display: flex;
   flex-wrap: wrap;
-  gap: 20px;
+  gap: 15px;
   justify-content: center;
 }
 
@@ -161,10 +157,14 @@
 }
 
 .navegacion-paginas-circular {
+  margin-top: 33px;
   display: flex;
   justify-content: center;
-  gap: 15px;
-  padding: 20px;
+  gap: 10px;
+}
+
+.navabajo {
+  margin-bottom: 33px;
 }
 
 .boton-circular {

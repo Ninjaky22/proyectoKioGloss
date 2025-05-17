@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="productos.css" />
     <link rel="stylesheet" href="responsive.css" />
     <link rel="stylesheet" href="carrito.css" />
@@ -15,7 +16,7 @@
       src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"
       defer
     ></script>
-    <title>Productos</title>
+    <title>KIO Gloss | Productos</title>
     <link rel="stylesheet" href="font.googleapis.com" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -478,7 +479,7 @@
       </div>
     </section>
 
-    <div class="navegacion-paginas-circular">
+    <div class="navegacion-paginas-circular navabajo">
       <a href="productos.html" class="boton-circular boton-anterior">
         <i class="fas fa-arrow-left"></i>
       </a>
@@ -511,10 +512,26 @@
         <div class="links">
           <h4>Ayuda</h4>
           <ul>
-            <li><a href="#">Nuestros Productos</a></li>
-            <li><a href="#">Comprar en Linea </a></li>
-            <li><a href="#">Envíos </a></li>
-            <li><a href="#">proveedores</a></li>
+            <li>
+              <button id="btn-abrir-np" class="boton-modal-footer">
+                Nuestros Productos
+              </button>
+            </li>
+            <li>
+              <button id="btn-abrir-cl" class="boton-modal-footer">
+                Comprar en Linea
+              </button>
+            </li>
+            <li>
+              <button id="btn-abrir-e" class="boton-modal-footer">
+                Envíos
+              </button>
+            </li>
+            <li>
+              <button id="btn-abrir-pee" class="boton-modal-footer">
+                Proveedores
+              </button>
+            </li>
           </ul>
         </div>
 
@@ -552,51 +569,81 @@
       </div>
     </div>
     <!--MODAL ingresar-->
+    <!--MODAL ingresar-->
     <dialog id="modal-ingresar">
       <button id="btn-x-cerrar-ingresar" class="btn-x">✖</button>
-      <div class="dialog-ingresar">
-        <img src="img_cat/personita1.svg" class="personita" />
-        <h1>INICIO DE SESION</h1>
-        <form method="dialog-ingresar" class="ingresar-form">
-          <input type="text" placeholder="Email o usuario" required />
-          <input type="password" placeholder="Contraseña" required />
-        </form>
-        <button
-          id="btn-cerrar-modal-ingresar"
-          class="boton-cerrar-modal-ingresar"
-        >
-          Ingresar
-        </button>
-        <p>
-          ¿No estás registrado? <a href="" id="link-registrate">¡Registrate!</a>
-        </p>
+      <div class="dialog-ingresar-horizontal">
+        <div class="login-imagen-container">
+          <img
+            src="img_cat/personita1.svg"
+            class="personita-login"
+            alt="Ilustración de inicio de sesión"
+          />
+        </div>
+        <div class="login-contenido">
+          <h1>INICIO DE SESIÓN</h1>
+          <form method="dialog" class="ingresar-form">
+            <input type="text" placeholder="Email o usuario" required />
+            <input type="password" placeholder="Contraseña" required />
+          </form>
+          <button
+            id="btn-cerrar-modal-ingresar"
+            class="boton-cerrar-modal-ingresar"
+          >
+            Ingresar
+          </button>
+          <p>
+            ¿No estás registrado?
+            <a href="#" id="link-registrate">¡Regístrate!</a>
+          </p>
+        </div>
       </div>
     </dialog>
 
-    <!--MODAL registrar-->
+    <!--MODAL Registrarse-->
     <dialog id="modal-registrar">
-      <button id="btn-x-cerrar-ingreso" class="btn-x">✖</button>
-      <div class="dialog-registrar">
-        <h1>¡REGISTRATE!</h1>
-        <form method="dialog-registrar" class="registrar-form">
-          <input type="text" placeholder="Nombre de usuario" required />
-          <input type="password" placeholder="Contraseña" required />
-          <input
-            type="password"
-            placeholder="Confirma tu Contraseña"
-            required
+      <button id="btn-x-cerrar-registrar" class="btn-x btn-x-registrar">
+        ✖
+      </button>
+      <div class="dialog-registrar-horizontal">
+        <div class="registro-imagen-container">
+          <img
+            src="img_cat/personita_registro.svg"
+            class="personita-registro"
+            alt="Ilustración de registro"
           />
-        </form>
-        <button
-          id="btn-cerrar-modal-registrar"
-          class="boton-cerrar-modal-registrar"
-        >
-          Ingresar
-        </button>
-        <p>
-          ¿Ya estás registrado?
-          <a href="" id="link-ingresar">¡Inicia sesión!</a>
-        </p>
+        </div>
+        <div class="registro-contenido">
+          <h1>¡REGÍSTRATE!</h1>
+          <form method="dialog" class="registrar-form">
+            <input
+              type="text"
+              placeholder="Nombre de usuario"
+              name="username"
+              required
+            />
+            <input type="email" placeholder="Email" name="email" required />
+            <input
+              type="password"
+              placeholder="Contraseña"
+              name="password"
+              required
+            />
+            <input
+              type="password"
+              placeholder="Confirma tu Contraseña"
+              name="confirm_password"
+              required
+            />
+          </form>
+          <button id="btn-submit-registrar" class="boton-submit-modal">
+            Registrarse
+          </button>
+          <p>
+            ¿Ya estás registrado?
+            <a href="#" id="link-ingresar-desde-registro">¡Inicia sesión!</a>
+          </p>
+        </div>
       </div>
     </dialog>
   </body>
