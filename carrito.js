@@ -139,7 +139,6 @@ document.addEventListener("DOMContentLoaded", () => {
     .querySelectorAll(".product-card .product-actions .buy-btn")
     .forEach((btn) => {
       btn.addEventListener("click", () => {
-        // Ya 'product' contendrá 'imageSrc' si lo añadiste al data-product
         const product = JSON.parse(btn.dataset.product);
         const quantityInput = btn
           .closest(".product-card")

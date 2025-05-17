@@ -6,8 +6,8 @@
 
 .anclas {
   text-decoration: none;
-  color: #ffffffea;
-  padding: 10px 18px;
+  color: white;
+  padding: 10px 10px;
   background-color: rgba(144, 53, 172, 0.918);
   text-shadow: #ffffff 1px 1px 5px;
   border-radius: 25px;
@@ -15,10 +15,10 @@
   font-family: Caveat;
   font-weight: bold;
   text-align: center;
-  display: inline-block;
   transform: scale(1);
   box-shadow: none;
   transition: all 0.3s ease;
+  flex: 0 0 8%; 
 }
 
 .anclas:hover {
