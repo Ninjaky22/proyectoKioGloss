@@ -1,27 +1,27 @@
 @media (max-width: 800px) {
-    .nav1 {
-      flex-direction: column;
-    }
-  
-    .nav-links {
-      margin: 10px 15px;
-      text-align: center;
-      width: none;
-    }
-  
-    .buttom {
-      display: inline-block;
-      font-size: 29.2px;
-    }
-  
-    .desaparece {
-      display: none;
-    }
-  
-    .buttom:hover {
-      background-color: #e8e0e0ea;
-      border-radius: 25px;
-      transition: 0.5s;
-      box-shadow: #b4b4b4 2px 2px 10px 1px;
-    }
+  .nav1 {
+    flex-direction: column;
   }
+
+  .nav-links {
+    margin: 10px 15px;
+    text-align: center;
+    width: none;
+  }
+
+  .buttom {
+    display: inline-block;
+    font-size: 29.2px;
+  }
+
+  .desaparece {
+    display: none;
+  }
+
+  .buttom:hover {
+    background-color: #e8e0e0ea;
+    border-radius: 25px;
+    transition: 0.5s;
+    box-shadow: #b4b4b4 2px 2px 10px 1px;
+  }
+}

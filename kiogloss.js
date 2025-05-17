@@ -1,18 +1,17 @@
-function accion () {
-    var ancla = document.getElementsByClassName("nav-links");
-    for (var i = 0; i < ancla.length; i++){
-        ancla[i].classList.toggle('desaparece');
-    }  
+function accion() {
+  var ancla = document.getElementsByClassName("nav-links");
+  for (var i = 0; i < ancla.length; i++) {
+    ancla[i].classList.toggle("desaparece");
+  }
 }
 
-                    // MODAL INGRESAR//
+// MODAL INGRESAR//
 
 const btnabrirmodal = document.querySelector("#btn-abrir-ingresar");
 const btncerrarmodal = document.querySelector("#btn-cerrar-modal-ingresar");
 const btnXcerrar = document.querySelector("#btn-x-cerrar-ingresar");
 const modal = document.querySelector("#modal-ingresar");
 const dialogContent = modal.querySelector(".dialog-ingresar");
-
 
 btnabrirmodal.addEventListener("click", () => {
   modal.showModal();
@@ -21,10 +20,8 @@ btnabrirmodal.addEventListener("click", () => {
   dialogContent.classList.add("dialog-ingresar");
 });
 
-
 function cerrarModalConAnimacion() {
   dialogContent.classList.add("fade-out");
-
 
   setTimeout(() => {
     modal.close();
@@ -51,19 +48,19 @@ linkRegistrarse.addEventListener("click", (e) => {
     dialogContentRegistrar.classList.remove("fade-out");
     void dialogContentRegistrar.offsetWidth;
     dialogContentRegistrar.classList.add("dialog-registrar");
-
   }, 300);
 });
+// FIN MODAL INGRESAR//
 
-                    // FIN MODAL INGRESAR//
-
-                      // MODAL REGISTRAR //
-
+// MODAL REGISTRAR //
 const btnAbrirModalRegistrar = document.querySelector("#btn-abrir-registrar");
-const btnCerrarModalRegistrar = document.querySelector("#btn-cerrar-modal-registrar");
+const btnCerrarModalRegistrar = document.querySelector(
+  "#btn-cerrar-modal-registrar"
+);
 const btnXCerrarRegistrar = document.querySelector("#btn-x-cerrar-ingreso");
 const modalRegistrar = document.querySelector("#modal-registrar");
-const dialogContentRegistrar = modalRegistrar.querySelector(".dialog-registrar");
+const dialogContentRegistrar =
+  modalRegistrar.querySelector(".dialog-registrar");
 
 btnAbrirModalRegistrar.addEventListener("click", () => {
   modalRegistrar.showModal();
@@ -81,32 +78,29 @@ function cerrarModalRegistrarConAnimacion() {
   }, 300);
 }
 
-btnCerrarModalRegistrar.addEventListener("click", cerrarModalRegistrarConAnimacion);
+btnCerrarModalRegistrar.addEventListener(
+  "click",
+  cerrarModalRegistrarConAnimacion
+);
 btnXCerrarRegistrar.addEventListener("click", cerrarModalRegistrarConAnimacion);
 
 const linkIngresar = document.querySelector("#link-ingresar");
 
 linkIngresar.addEventListener("click", (e) => {
   e.preventDefault();
-
   dialogContentRegistrar.classList.add("fade-out");
-
   setTimeout(() => {
     modalRegistrar.close();
     dialogContentRegistrar.classList.remove("fade-out");
-    
     modal.showModal();
     dialogContent.classList.remove("fade-out");
     void dialogContent.offsetWidth;
     dialogContent.classList.add("dialog-ingresar");
-
   }, 300);
 });
+// FIN MODAL REGISTRAR //
 
-                      // FIN MODAL REGISTRAR //
-
-                      // MODAL NUESTROS PRODUCTOS //
-
+// MODAL NUESTROS PRODUCTOS //
 const btnAbrirModalnp = document.querySelector("#btn-abrir-np");
 const btnXCerrarnp = document.querySelector("#btn-x-cerrar-np");
 const modalnp = document.querySelector("#modal-np");
@@ -121,21 +115,16 @@ btnAbrirModalnp.addEventListener("click", () => {
 
 function cerrarModalnpConAnimacion() {
   dialogContentnp.classList.add("fade-out");
-
   setTimeout(() => {
     modalnp.close();
     dialogContentnp.classList.remove("fade-out");
   }, 300);
 }
-
 btnXCerrarnp.addEventListener("click", cerrarModalnpConAnimacion);
-
 const linknp = document.querySelector("#link-np");
+// FIN MODAL NUESTROS PRODUCTOS //
 
-                      // FIN MODAL NUESTROS PRODUCTOS //
-
-                      // MODAL COMPRAR EN LINEA //
-
+// MODAL COMPRAR EN LINEA //
 const btnAbrirModalcl = document.querySelector("#btn-abrir-cl");
 const btnXCerrarcl = document.querySelector("#btn-x-cerrar-cl");
 const modalcl = document.querySelector("#modal-cl");
@@ -150,21 +139,16 @@ btnAbrirModalcl.addEventListener("click", () => {
 
 function cerrarModalclConAnimacion() {
   dialogContentcl.classList.add("fade-out");
-
   setTimeout(() => {
     modalcl.close();
     dialogContentcl.classList.remove("fade-out");
   }, 300);
 }
-
 btnXCerrarcl.addEventListener("click", cerrarModalclConAnimacion);
-
 const linkcl = document.querySelector("#link-cl");
+// FIN MODAL COMPRAR EN LINEA //
 
-                      // FIN MODAL COMPRAR EN LINEA //
-
-                      // MODAL ENVIOS //
-
+// MODAL ENVIOS //
 const btnAbrirModale = document.querySelector("#btn-abrir-e");
 const btnXCerrare = document.querySelector("#btn-x-cerrar-e");
 const modale = document.querySelector("#modal-e");
@@ -179,21 +163,16 @@ btnAbrirModale.addEventListener("click", () => {
 
 function cerrarModaleConAnimacion() {
   dialogContente.classList.add("fade-out");
-
   setTimeout(() => {
     modale.close();
     dialogContente.classList.remove("fade-out");
   }, 300);
 }
-
 btnXCerrare.addEventListener("click", cerrarModaleConAnimacion);
-
 const linke = document.querySelector("#link-e");
+// FIN MODAL ENVIOS //
 
-                      // FIN MODAL ENVIOS //
-
-                      // MODAL PROVEEDORES //
-
+// MODAL PROVEEDORES //
 const btnAbrirModalpee = document.querySelector("#btn-abrir-pee");
 const btnXCerrarpee = document.querySelector("#btn-x-cerrar-pee");
 const modalpee = document.querySelector("#modal-pee");
@@ -208,31 +187,26 @@ btnAbrirModalpee.addEventListener("click", () => {
 
 function cerrarModalpeeConAnimacion() {
   dialogContentpee.classList.add("fade-out");
-
   setTimeout(() => {
     modalpee.close();
     dialogContentpee.classList.remove("fade-out");
   }, 300);
 }
-
 btnXCerrarpee.addEventListener("click", cerrarModalpeeConAnimacion);
-
 const linkpee = document.querySelector("#link-pee");
+// FIN MODAL PROOVEDORES //
 
-                      // FIN MODAL PROOVEDORES //
-
-           // REDIRECCIÓN LOGO //
-
+// REDIRECCIÓN LOGO //
 const logoLink = document.getElementById("logo-link");
+const esInicio =
+  window.location.pathname.endsWith("index.html") ||
+  window.location.pathname === "/";
 
-  const esInicio = window.location.pathname.endsWith("index.html") || window.location.pathname === "/";
-
-  if (!esInicio) {
-    logoLink.href = "index.html";
-  } else {
-    logoLink.addEventListener("click", function (e) {
-      e.preventDefault();
-    });
-  }
-
-          // Fin REDIRECCIÓN LOGO //
+if (!esInicio) {
+  logoLink.href = "index.html";
+} else {
+  logoLink.addEventListener("click", function (e) {
+    e.preventDefault();
+  });
+}
+//FIN REDIRECCIÓN LOGO //

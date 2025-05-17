@@ -1,8 +1,8 @@
 document.addEventListener("DOMContentLoaded", function () {
-  document.querySelectorAll('a[href^="#"]').forEach(enlace => {
-    enlace.addEventListener('click', function (e) {
+  document.querySelectorAll('a[href^="#"]').forEach((enlace) => {
+    enlace.addEventListener("click", function (e) {
       e.preventDefault();
-      const destino = document.querySelector(this.getAttribute('href'));
+      const destino = document.querySelector(this.getAttribute("href"));
       if (destino) {
         scrollAnimado(destino.offsetTop, 800); // 800 milisegundos
       }
@@ -26,9 +26,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     function easeInOutCubic(t) {
-      return t < 0.5
-        ? 4 * t * t * t
-        : 1 - Math.pow(-2 * t + 2, 3) / 2;
+      return t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
     }
 
     requestAnimationFrame(animacionScroll);
