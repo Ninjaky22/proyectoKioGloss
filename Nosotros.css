@@ -29,11 +29,11 @@
   height: 300px;
   width: 180px;
   color: white;
+  transition: 0.5s ease;
 }
 
 .fundadora:hover {
   transform: scale(1.05);
-  transition: 0.5s;
 }
 
 .img-fundadora {
@@ -48,12 +48,14 @@
   border-radius: 30px;
   text-align: center;
   box-shadow: #666 2px 2px 10px 1px;
+  transition: 0.5s ease;
 }
 
 .quien h2 {
   color: white;
   text-shadow: black 1px 1px 5px;
 }
+
 .fundadora h1 {
   color: white;
   text-shadow: black 1px 1px 5px;
@@ -61,5 +63,4 @@
 
 .quien:hover {
   transform: scale(1.05);
-  transition: 0.5s;
 }

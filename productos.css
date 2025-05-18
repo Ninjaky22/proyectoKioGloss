@@ -75,7 +75,10 @@
 }
 
 .product-name {
-  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  height: 50px;
+  font-size: calc(1rem + 1.5vw);
   font-weight: bold;
   color: #333;
 }

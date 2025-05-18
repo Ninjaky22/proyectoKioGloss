@@ -1,4 +1,16 @@
 @media (max-width: 800px) {
+
+  body,
+  html {
+    overflow-x: hidden;
+  }
+
+  header {
+    background-color: #e6affc;
+    background-image: none;
+    position: relative;
+  }
+
   .nav1 {
     flex-direction: column;
   }
@@ -9,19 +21,113 @@
     width: none;
   }
 
-  .buttom {
-    display: inline-block;
-    font-size: 29.2px;
+  .header-mobil {
+    display: flex;
   }
 
-  .desaparece {
+  .header-pc {
     display: none;
   }
 
-  .buttom:hover {
-    background-color: #e8e0e0ea;
-    border-radius: 25px;
-    transition: 0.5s;
-    box-shadow: #b4b4b4 2px 2px 10px 1px;
+  /* Buscador */
+
+  .busqueda-input {
+    width: 100%;
   }
+  .search-container {
+    justify-self: center;
+    width: 200px;
+  }
+
+
+  /* FOOTER */
+
+  footer {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .footer-div {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .links {
+    text-align: center;
+  }
+
+  .logo-2 {
+    display: none;
+  }
+
+  footer strong {
+    text-align: center;
+  }
+
+  /* Carrusel index */
+
+
+
+  /* PRODUCTOS.html */
+
+  .div-ancla {
+    flex-wrap: wrap;
+    justify-content: center;
+
+  }
+
+  .div-ancla {
+    display: none;
+  }
+
+  /* Nosotros.html */
+  .nosotros {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .fundadora {
+    margin-top: 20px;
+    margin-left: 0px;
+  }
+
+
+  /* MODAL REGISTRAR */
+  .dialog-registrar-horizontal {
+    flex-direction: column;
+  }
+
+  #modal-registrar {
+    min-width: auto;
+    min-height: auto;
+  }
+
+  .registro-imagen-container {
+    display: none;
+  }
+
+  /* MODAL INGRESAR */
+
+  .dialog-ingresar-horizontal {
+    flex-direction: column;
+  }
+
+  #modal-ingresar {
+    min-height: auto;
+    min-width: auto;
+    margin: 12px;
+  }
+
+  .login-imagen-container {
+    display: none;
+  }
+
+  /* MODAL RECUPERAR CONTRASEÑA */
+
+  #modal-recuperar-password {
+    min-width: auto;
+    min-height: auto;
+    margin: 12px;
+  }
+
 }

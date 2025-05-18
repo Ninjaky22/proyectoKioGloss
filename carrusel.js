@@ -6,18 +6,27 @@ document.addEventListener("DOMContentLoaded", function () {
   const productCards = document.querySelectorAll(".product-card");
 
   let currentIndex = 0;
-  let cardsToShow = 4; // Cantidad de tarjetas a mostrar inicialmente
+  let cardsToShow = getCardsToShow(); // Función para determinar cuántas tarjetas mostrar
   let cardWidth = 0;
+
+  function getCardsToShow() {
+    const screenWidth = window.innerWidth;
+    if (screenWidth < 768) {
+      return 2; // Mostrar 2 tarjetas en móviles
+    } else if (screenWidth < 1024) {
+      return 3; // Mostrar 3 tarjetas en tablets
+    } else {
+      return 4; // Mostrar 4 tarjetas en escritorio
+    }
+  }
 
   function calculateCardWidth() {
     if (productCards.length > 0) {
       const firstCardStyle = window.getComputedStyle(productCards[0]);
-
       const cardOuterWidth =
         productCards[0].offsetWidth +
         parseInt(firstCardStyle.marginRight) +
         parseInt(firstCardStyle.marginLeft);
-
       cardWidth = cardOuterWidth;
     } else {
       cardWidth = 0;
@@ -25,9 +34,8 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   function updateSlider() {
-    sliderWrapper.style.transform = `translateX(-${
-      currentIndex * cardWidth
-    }px)`;
+    sliderWrapper.style.transform = `translateX(-${currentIndex * cardWidth
+      }px)`;
     updateButtonVisibility();
   }
 
@@ -56,12 +64,17 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   }
 
-  // Inicialización
-  if (productCards.length > 0) {
-    calculateCardWidth(); // Aseguramos que el ancho se calcule primero
-    // Ajustar el ancho del slider-wrapper para contener todas las tarjetas
+  function initializeSlider() {
+    cardsToShow = getCardsToShow();
+    calculateCardWidth();
     sliderWrapper.style.width = `${productCards.length * cardWidth}px`;
     updateSlider();
+    updateButtonVisibility();
+  }
+
+  // Inicialización
+  if (productCards.length > 0) {
+    initializeSlider();
 
     if (nextButton) {
       nextButton.addEventListener("click", nextSlide);
@@ -72,8 +85,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     window.addEventListener("resize", () => {
-      calculateCardWidth();
-      updateSlider();
+      initializeSlider(); // Recalcular al cambiar el tamaño de la ventana
     });
   }
 });

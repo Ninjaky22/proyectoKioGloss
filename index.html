@@ -1,449 +1,400 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="responsive.css" />
-    <link rel="stylesheet" href="carrito.css" />
-    <script src="carrito.js"></script>
-    <script src="kiogloss.js" defer></script>
-    <script src="carrusel.js" defer></script>
-    <script src="animacion.js" defer></script>
-    <script
-      src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"
-      defer
-    ></script>
-    <title>KIO Gloss</title>
-    <link rel="stylesheet" href="font.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="preconnect" href="https://www.google.com.ar/maps?hl=es" />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
-    />
-  </head>
 
-  <body>
-    <header>
+<head>
+  <meta charset="UTF-8" />
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="responsive.css" />
+  <link rel="stylesheet" href="carrito.css" />
+  <script src="carrito.js" defer></script>
+  <script src="kiogloss.js" defer></script>
+  <script src="carrusel.js" defer></script>
+  <script src="animacion.js" defer></script>
+  <script src="responsive.js" defer></script>
+  <script src="busqueda.js" defer></script>
+  <script src="registration.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" defer></script>
+  <title>Kio Gloss</title>
+  <link rel="stylesheet" href="font.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&display=swap" rel="stylesheet" />
+  <link rel="preconnect" href="https://www.google.com.ar/maps?hl=es" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+</head>
+
+<body id="top">
+  <header>
+    <div class="header-pc">
       <nav class="nav1">
-       <section class="section">
-  <form action="/buscar" method="post" class="search-form">
-    <div class="search-container">
-      <i class="fas fa-search search-icon"></i>
-      <input
-        class="busqueda-input"
-        type="text"
-        id="terminoBusqueda"
-        name="q"
-        placeholder="Buscar..."
-      />
-    </div>
-  </form>
-</section>
-        <a href="#" id="logo-link"
-          ><img
-            src="img_cat/logo.png"
-            alt="Logo"
-            class="logo"
-            width="135px"
-            height="105px"
-            style="justify-content: flex-end"
-        /></a>
-        <button id="btn-abrir-ingresar" class="ingreso">Ingresar</button>
-        <button id="btn-abrir-registrar" class="ingreso">Regístrate</button>
+        <section class="section">
+          <form action="/buscar" method="post" class="search-form">
+            <div class="search-container">
+              <i class="fas fa-search search-icon"></i>
+              <input class="busqueda-input" type="text" id="terminoBusqueda" name="q" placeholder="Buscar..." />
+            </div>
+          </form>
+        </section>
+        <a href="#" id="logo-link"><img src="img_cat/logo.png" alt="Logo" class="logo" width="135px" height="105px"
+            style="justify-content: flex-end" /></a>
+        <div class="auth-buttons-pc">
+          <button id="btn-abrir-ingresar" class="ingreso">Ingresar</button>
+          <button id="btn-abrir-registrar" class="ingreso">Regístrate</button>
+          <button id="btn-cerrar-sesion-pc" class="ingreso oculto">
+            <i class="fas fa-sign-out-alt"></i> Cerrar Sesion
+          </button>
+        </div>
         <a href="#" class="carrito ingreso">
           <i class="fas fa-shopping-cart"></i>
         </a>
       </nav>
       <hr color="white" />
       <nav class="menu">
-        <button class="buttom" onclick="accion ()">MENU</button>
-        <a href="#" class="nav-links desaparece">Inicio</a>
+        <a href="index.html" class="nav-links desaparece">Inicio</a>
         <a href="productos.html" class="nav-links desaparece">Productos</a>
         <a href="Nosotros.html" class="nav-links desaparece">Nosotros</a>
       </nav>
-    </header>
-
-      <div class="container">
-        <div class="sticky-social-conteiner">
-          <div class="sticky-social">
-            <a
-              href="https://api.whatsapp.com/send/?phone=573214479475&text&type=phone_number&app_absent=0"
-              target="_blank"
-            >
-              <p>Whatsapp</p>
-              <i class="bi bi-whatsapp"></i>
-            </a>
-            <a href="https://www.instagram.com/kio_gloss/" target="_blank">
-              <p>Instagram</p>
-              <i class="bi bi-instagram"></i>
-            </a>
-            <a
-              href="https://mail.google.com/mail/?view=cm&fs=1&to=kioglos@gmail.com<"
-              target="_blank"
-            >
-              <p>Gmail</p>
-              <i class="bi bi-chat-square-text"></i>
-            </a>
-          </div>
-        </div>
-      </div>
-      <section class="featured-products">
-        <h2>Productos Destacados</h2>
-        <div class="slider-container">
-          <button class="slider-button prev-button">
-            <i class="fas fa-chevron-left"></i>
-          </button>
-          <div class="slider-wrapper">
-            <a href="productos.html##desma" class="product-card-link">
-              <div class="product-card">
-                <img src="img_cat/cuidadoFacial.jpg" alt="Producto 1" />
-                <div class="product-info">
-                  <p class="description">Cuidado facial</p>
-                </div>
-              </div>
-            </a>
-
-            <a href="productos.html#desma" class="product-card-link">
-              <div class="product-card">
-                <img src="img_cat/desmaquillantes.jpg" alt="Producto 2" />
-                <div class="product-info">
-                  <p class="description">Desmaquillantes</p>
-                </div>
-              </div>
-            </a>
-
-            <a href="productos.html#maquillaje" class="product-card-link">
-              <div class="product-card">
-                <img src="img_cat/maquillaje.jpg" alt="Producto 3" />
-                <div class="product-info">
-                  <p class="description">Maquillaje</p>
-                </div>
-              </div>
-            </a>
-
-            <a href="productos-pag2.html#tonicos" class="product-card-link">
-              <div class="product-card">
-                <img src="img_cat/tonicos.jpg" alt="Producto 4" />
-                <div class="product-info">
-                  <p class="description">Tónicos</p>
-                </div>
-              </div>
-            </a>
-
-            <a href="productos-pag2.html#capilar" class="product-card-link">
-              <div class="product-card">
-                <img src="img_cat/cuidadoCapilar.jpg" alt="Producto 5" />
-                <div class="product-info">
-                  <p class="description">Cuidado capilar</p>
-                </div>
-              </div>
-            </a>
-
-            <a href="productos-pag2.html#brochas" class="product-card-link">
-              <div class="product-card">
-                <img src="img_cat/brochass.jpg" alt="Producto Brochas" />
-                <div class="product-info">
-                  <p class="description">Brochas</p>
-                </div>
-              </div>
-            </a>
-          </div>
-          <button class="slider-button next-button">
-            <i class="fas fa-chevron-right" style="color: blueviolet"></i>
-          </button>
-        </div>
-      </section>
     </div>
-
-    <footer>
-      <div class="mapa">
-        <iframe
-          src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d248.47826132442393!2d-75.68487196582885!3d4.829647176891404!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e38818a2c87b945%3A0x114245012ce5df47!2sKIO%20GLOSS!5e0!3m2!1ses-419!2sco!4v1747089945886!5m2!1ses-419!2sco"
-          width="800"
-          height="200"
-          style="border: 0"
-          allowfullscreen=""
-          loading="lazy"
-          referrerpolicy="no-referrer-when-downgrade"
-        ></iframe>
-      </div>
-
-      <div class="footer-div">
-        <div>
-          <a href="#top" class="scroll-top"
-            ><img src="img_cat/logo.png" class="logo-2" width="200px"
-          /></a>
+    <!-- MENU MOBIL -->
+    <div class="header-mobil">
+      <div class="hamburguesa" onclick="toggleMenu()">☰</div>
+      <form action="/buscar" method="post" class="search-form">
+        <div class="search-container">
+          <i class="fas fa-search search-icon"></i>
+          <input class="busqueda-input" type="text" id="terminoBusquedaMobil" name="q" placeholder="Buscar..." />
         </div>
-
-        <div class="links">
-          <h4>Ayuda</h4>
-          <ul>
-            <li>
-              <button id="btn-abrir-np" class="boton-modal-footer">
-                Nuestros Productos
-              </button>
-            </li>
-            <li>
-              <button id="btn-abrir-cl" class="boton-modal-footer">
-                Comprar en Linea
-              </button>
-            </li>
-            <li>
-              <button id="btn-abrir-e" class="boton-modal-footer">
-                Envíos
-              </button>
-            </li>
-            <li>
-              <button id="btn-abrir-pee" class="boton-modal-footer">
-                Proveedores
-              </button>
-            </li>
+      </form>
+      <a href="#" class="carrito ingreso">
+        <i class="fas fa-shopping-cart"></i>
+      </a>
+    </div>
+    <nav id="menu-lateral" class="menu-lateral">
+      <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li class="has-submenu">
+          <a href="#" class="productos-submenu-toggle">Productos <span class="arrow-indicator">▶</span></a>
+          <ul class="submenu">
+            <li><a href="productos.html#facial">Cuidado Facial</a></li>
+            <li><a href="productos.html#maquillaje">Maquillaje</a></li>
+            <li><a href="productos.html#desma">Desmaquillantes</a></li>
+            <li><a href="productos-pag2.html#tonicos">Tónicos</a></li>
+            <li><a href="productos-pag2.html#capilar">Cuidado Capilar</a></li>
+            <li><a href="productos-pag2.html#brochas">Brochas</a></li>
           </ul>
-        </div>
+        </li>
+        <li><a href="Nosotros.html">Nosotros</a></li>
+        <li id="li-mobile-ingresar"><a href="#" id="mobile-menu-ingresar">Ingresar</a></li>
+        <li id="li-mobile-registrar"><a href="#" id="mobile-menu-registrar">Regístrate</a></li>
+        <li id="li-mobile-cerrar-sesion" class="oculto"><a href="#" id="mobile-menu-cerrar-sesion"><i
+              class="fas fa-sign-out-alt"></i> Cerrar Sesión</a></li>
+      </ul>
+    </nav>
+  </header>
 
-        <div class="links">
-          <h4>Nosotros</h4>
-          <ul>
-            <li><a href="#">Teléfono: +57 3227622098</a></li>
-            <li><a href="#">Dirección: Mz 12 Casa 24 Campestre D</a></li>
-            <li><a href="#">Correo: dmpenagos16@gmail.com</a></li>
-            <li><a href="#">Ubicación: Risaralda - Dosquebradas</a></li>
-          </ul>
-        </div>
-      </div>
-      <strong>
-        <p class="derechos">
-          Copyright 2025 &copy; Derechos Reservados por estudiantes de la FET
-        </p>
-      </strong>
-    </footer>
-
-    <!--MODAL CARRITO-->
-    <div id="carrito-modal" class="carrito-modal">
-      <div class="carrito-contenido">
-        <div class="carrito-header">
-          <h3>Carrito de Compras</h3>
-          <span class="cerrar-carrito">&times;</span>
-        </div>
-        <div id="carrito-items"></div>
-        <div class="carrito-footer">
-          <div class="carrito-total">
-            <strong>Total:</strong> <span id="total-precio">$0.00</span>
-          </div>
-          <button class="pagar-btn">Pagar</button>
-        </div>
+  <div class="container">
+    <div class="sticky-social-conteiner">
+      <div class="sticky-social">
+        <a href="https://api.whatsapp.com/send/?phone=573214479475&text&type=phone_number&app_absent=0" target="_blank">
+          <p>Whatsapp</p>
+          <i class="bi bi-whatsapp"></i>
+        </a>
+        <a href="https://www.instagram.com/kio_gloss/" target="_blank">
+          <p>Instagram</p>
+          <i class="bi bi-instagram"></i>
+        </a>
+        <a href="https://mail.google.com/mail/?view=cm&fs=1&to=kioglos@gmail.com<" target="_blank">
+          <p>Gmail</p>
+          <i class="bi bi-chat-square-text"></i>
+        </a>
       </div>
     </div>
-    <!--MODAL ingresar-->
-    <dialog id="modal-ingresar">
-      <button id="btn-x-cerrar-ingresar" class="btn-x">✖</button>
-      <div class="dialog-ingresar-horizontal">
-        <div class="login-imagen-container">
-          <img
-            src="img_cat/personita1.svg"
-            class="personita-login"
-            alt="Ilustración de inicio de sesión"
-          />
-        </div>
-        <div class="login-contenido">
-          <h1>INICIO DE SESIÓN</h1>
-          <form method="dialog" class="ingresar-form">
-            <input
-              type="email"
-              id="login-email-input"
-              placeholder="Email o usuario"
-              required
-            />
-            <div class="password-input-wrapper">
-              <input
-                type="password"
-                id="login-password-input"
-                placeholder="Contraseña"
-                required
-              />
-              <i
-                id="login-toggle-password"
-                class="password-toggle-icon fas fa-eye"
-              ></i>
-            </div>
-          </form>
-          <a
-            href="#"
-            id="link-recuperar-password-desde-login"
-            class="link-accion-modal"
-            >¿Olvidaste tu contraseña?</a
-          >
-          <button id="btn-ingresar-submit" class="boton-accion-principal">
-            Ingresar
-          </button>
-          <p>
-            ¿No estás registrado?
-            <a href="#" id="link-registrate">¡Regístrate!</a>
-          </p>
-        </div>
-      </div>
-    </dialog>
-
-    <!--MODAL Registrarse-->
-    <dialog id="modal-registrar">
-      <button id="btn-x-cerrar-registrar" class="btn-x btn-x-registrar">
-        ✖
+  </div>
+  <section class="featured-products" id="productos-destacados">
+    <h2>Productos Destacados</h2>
+    <div class="slider-container">
+      <button class="slider-button prev-button">
+        <i class="fas fa-chevron-left"></i>
       </button>
-      <div class="dialog-registrar-horizontal">
-        <div class="registro-imagen-container">
-          <img
-            src="img_cat/personita1.svg"
-            class="personita-registro"
-            alt="Ilustración de registro"
-          />
-        </div>
-        <div class="registro-contenido">
-          <h1>¡REGÍSTRATE!</h1>
-          <form method="dialog" class="registrar-form">
-            <input
-              type="text"
-              placeholder="Nombre de usuario"
-              name="username"
-              id="registrar-username"
-              required
-            />
-            <input
-              type="email"
-              placeholder="Email"
-              name="email"
-              id="registrar-email"
-              required
-            />
-            <input
-              type="password"
-              placeholder="Contraseña"
-              name="password"
-              id="registrar-password-input"
-              required
-            />
-            <div class="password-input-wrapper">
-              <input
-                type="password"
-                placeholder="Confirma tu Contraseña"
-                name="confirm_password"
-                id="registrar-confirm-password-input"
-                required
-              />
-              <i
-                id="registrar-toggle-password"
-                class="password-toggle-icon fas fa-eye"
-              ></i>
+      <div class="slider-wrapper">
+        <a href="productos.html##desma" class="product-card-link">
+          <div class="product-card">
+            <img src="img_cat/cuidadoFacial.jpg" alt="Producto 1" />
+            <div class="product-info">
+              <p class="description">Cuidado facial</p>
             </div>
-          </form>
-          <button id="btn-submit-registrar" class="boton-submit-modal">
+          </div>
+        </a>
+
+        <a href="productos.html#desma" class="product-card-link">
+          <div class="product-card">
+            <img src="img_cat/desmaquillantes.jpg" alt="Producto 2" />
+            <div class="product-info">
+              <p class="description">Desmaquillantes</p>
+            </div>
+          </div>
+        </a>
+
+        <a href="productos.html#maquillaje" class="product-card-link">
+          <div class="product-card">
+            <img src="img_cat/maquillaje.jpg" alt="Producto 3" />
+            <div class="product-info">
+              <p class="description">Maquillaje</p>
+            </div>
+          </div>
+        </a>
+
+        <a href="productos-pag2.html#tonicos" class="product-card-link">
+          <div class="product-card">
+            <img src="img_cat/tonicos.jpg" alt="Producto 4" />
+            <div class="product-info">
+              <p class="description">Tónicos</p>
+            </div>
+          </div>
+        </a>
+
+        <a href="productos-pag2.html#capilar" class="product-card-link">
+          <div class="product-card">
+            <img src="img_cat/cuidadoCapilar.jpg" alt="Producto 5" />
+            <div class="product-info">
+              <p class="description">Cuidado capilar</p>
+            </div>
+          </div>
+        </a>
+
+        <a href="productos-pag2.html#brochas" class="product-card-link">
+          <div class="product-card">
+            <img src="img_cat/brochass.jpg" alt="Producto Brochas" />
+            <div class="product-info">
+              <p class="description">Brochas</p>
+            </div>
+          </div>
+        </a>
+      </div>
+      <button class="slider-button next-button">
+        <i class="fas fa-chevron-right" style="color: blueviolet"></i>
+      </button>
+    </div>
+  </section>
+  </div>
+
+  <footer>
+    <div class="mapa">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d248.47826132442393!2d-75.68487196582885!3d4.829647176891404!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e38818a2c87b945%3A0x114245012ce5df47!2sKIO%20GLOSS!5e0!3m2!1ses-419!2sco!4v1747089945886!5m2!1ses-419!2sco"
+        width="800" height="200" style="border: 0" allowfullscreen="" loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+
+    <div class="footer-div">
+      <div>
+        <a href="#top" class="scroll-top"><img src="img_cat/logo.png" class="logo-2" width="200px" /></a>
+      </div>
+
+      <div class="links">
+        <h4>Ayuda</h4>
+        <ul>
+          <li>
+            <button id="btn-abrir-np" class="boton-modal-footer">
+              Nuestros Productos
+            </button>
+          </li>
+          <li>
+            <button id="btn-abrir-cl" class="boton-modal-footer">
+              Comprar en Linea
+            </button>
+          </li>
+          <li>
+            <button id="btn-abrir-e" class="boton-modal-footer">
+              Envíos
+            </button>
+          </li>
+          <li>
+            <button id="btn-abrir-pee" class="boton-modal-footer">
+              Proveedores
+            </button>
+          </li>
+        </ul>
+      </div>
+
+      <div class="links">
+        <h4>Nosotros</h4>
+        <ul>
+          <li><a>Teléfono: +57 3227622098</a></li>
+          <li><a>Dirección: Mz 12 Casa 24 Campestre D</a></li>
+          <li><a>Correo: dmpenagos16@gmail.com</a></li>
+          <li><a>Ubicación: Risaralda - Dosquebradas</a></li>
+        </ul>
+      </div>
+    </div>
+    <strong>
+      <p class="derechos">
+        Copyright 2025 &copy; Derechos Reservados por estudiantes de la FET
+      </p>
+    </strong>
+  </footer>
+
+  <!--MODAL CARRITO-->
+  <div id="carrito-modal" class="carrito-modal">
+    <div class="carrito-contenido">
+      <div class="carrito-header">
+        <h3>Carrito de Compras</h3>
+        <span class="cerrar-carrito">&times;</span>
+      </div>
+      <div id="carrito-items"></div>
+      <div class="carrito-footer">
+        <div class="carrito-total">
+          <strong>Total:</strong> <span id="total-precio">$0.00</span>
+        </div>
+        <button class="pagar-btn">Pagar</button>
+      </div>
+    </div>
+  </div>
+  <!--MODAL ingresar-->
+  <dialog id="modal-ingresar">
+    <button id="btn-x-cerrar-ingresar" class="btn-x">✖</button>
+    <div class="dialog-ingresar-horizontal">
+      <div class="login-imagen-container">
+        <img src="img_cat/personita1.svg" class="personita-login" alt="Ilustración de inicio de sesión" />
+      </div>
+      <div class="login-contenido">
+        <h1>INICIO DE SESIÓN</h1>
+        <form method="dialog" class="ingresar-form">
+          <input type="email" id="login-email-input" placeholder="Email o usuario" required />
+          <div class="password-input-wrapper">
+            <input type="password" id="login-password-input" placeholder="Contraseña" required />
+            <i id="login-toggle-password" class="password-toggle-icon fas fa-eye"></i>
+          </div>
+        </form>
+        <a href="#" id="link-recuperar-password-desde-login" class="link-accion-modal">¿Olvidaste tu contraseña?</a>
+        <button id="btn-ingresar-submit" class="boton-accion-principal">
+          Ingresar
+        </button>
+        <p>
+          ¿No estás registrado?
+          <a href="#" id="link-registrate">¡Regístrate!</a>
+        </p>
+      </div>
+    </div>
+  </dialog>
+
+  <!--MODAL Registrarse-->
+  <dialog id="modal-registrar">
+    <button id="btn-x-cerrar-registrar" class="btn-x btn-x-registrar">
+      ✖
+    </button>
+    <div class="dialog-registrar-horizontal">
+      <div class="registro-imagen-container">
+        <img src="img_cat/personita1.svg" class="personita-registro" alt="Ilustración de registro" />
+      </div>
+      <div class="registro-contenido">
+        <h1>¡REGÍSTRATE!</h1>
+        <form method="" class="registrar-form">
+          <input type="text" placeholder="Nombre de usuario" name="username" id="registrar-username" required />
+          <input type="email" placeholder="Email" name="email" id="registrar-email" required />
+          <input type="password" placeholder="Contraseña" name="password" id="registrar-password-input" required />
+          <div class="password-input-wrapper">
+            <input type="password" placeholder="Confirma tu Contraseña" name="confirm_password"
+              id="registrar-confirm-password-input" required />
+            <i id="registrar-toggle-password" class="password-toggle-icon fas fa-eye"></i>
+          </div>
+          <button id="btn-submit-registrar" class="boton-submit-modal" type="submit">
             Registrarse
           </button>
-          <p>
-            ¿Ya estás registrado?
-            <a href="#" id="link-ingresar-desde-registro">¡Inicia sesión!</a>
-          </p>
-        </div>
+        </form>
+        <p>
+          ¿Ya estás registrado?
+          <a href="#" id="link-ingresar-desde-registro">¡Inicia sesión!</a>
+        </p>
       </div>
-    </dialog>
+    </div>
+  </dialog>
 
-    <!--MODAL Recuperar contraseña-->
-    <dialog id="modal-recuperar-password">
-      <button id="btn-x-cerrar-recuperar" class="btn-x">✖</button>
-      <div class="dialog-recuperar-horizontal">
-        <div class="login-imagen-container">
-          <img
-            src="img_cat/personita1.svg"
-            class="personita-login"
-            alt="Ilustración de recuperación de contraseña"
-          />
-        </div>
-        <div class="recuperar-contenido">
-          <h1>RECUPERAR CONTRASEÑA</h1>
-          <p class="texto-instructivo">
-            Ingresa tu correo electrónico y te enviaremos un enlace para
-            restablecer tu contraseña.
-          </p>
-          <form method="dialog" class="recuperar-form">
-            <input
-              type="email"
-              id="recuperar-email"
-              placeholder="Tu correo electrónico"
-              required
-            />
-          </form>
-          <button id="btn-enviar-recuperacion" class="boton-accion-principal">
-            Enviar Enlace
-          </button>
-          <p>
-            <a href="#" id="link-volver-a-login" class="link-accion-modal"
-              >Volver a Inicio de Sesión</a
-            >
-          </p>
-        </div>
+  <!-- MODAL RECUPERAR CONTRASEÑA-->
+  <dialog id="modal-recuperar-password">
+    <button id="btn-x-cerrar-recuperar" class="btn-x">✖</button>
+    <div class="dialog-recuperar-horizontal">
+      <div class="login-imagen-container">
+        <img src="img_cat/personita1.svg" class="personita-login" alt="Ilustración de recuperación de contraseña" />
       </div>
-    </dialog>
+      <div class="recuperar-contenido">
+        <h1>RECUPERAR CONTRASEÑA</h1>
+        <p class="texto-instructivo" id="recuperar-texto-instructivo">
+          Ingresa tu correo electrónico. Si está registrado, te permitiremos restablecer tu contraseña.
+        </p>
+        <form method="dialog" class="recuperar-form" id="recuperar-form">
+          <div id="recuperar-email-section">
+            <input type="email" id="recuperar-email" placeholder="Tu correo electrónico" required />
+          </div>
 
-    <!--MODAL COMPRAR EN LINEA-->
-    <dialog id="modal-cl">
-      <button id="btn-x-cerrar-cl" class="btn-x">✖</button>
-      <div class="dialog-cl">
-        <h1>¡Comprar en Linea!</h1>
+          <div id="recuperar-nueva-password-section" style="display: none;">
+            <p class="texto-instructivo">Correo encontrado. Ingresa tu nueva contraseña:</p>
+            <input type="password" id="recuperar-nueva-password-input" placeholder="Nueva contraseña" required />
+            <input type="password" id="recuperar-confirmar-password-input" placeholder="Confirmar nueva contraseña"
+              required />
+          </div>
+        </form>
+        <button id="btn-accion-recuperar" class="boton-accion-principal">
+          Buscar Correo
+        </button>
         <p>
-          Comprar en línea es fácil y conveniente. Puedes explorar nuestra
-          amplia selección de productos desde la comodidad de tu hogar y
-          realizar tu pedido con solo unos clics. Ofrecemos opciones de pago
-          seguras y envío rápido para que recibas tus productos directamente en
-          tu puerta.
-        </p>
-        <p>
-          Compra ahora <a href="productos.html" id="link-cl">¡Click Aquí!</a>
+          <a href="#" id="link-volver-a-login-recuperar" class="link-accion-modal">Volver a Inicio de Sesión</a>
         </p>
       </div>
-    </dialog>
-    <!--MODAL Envio-->
-    <dialog id="modal-e">
-      <button id="btn-x-cerrar-e" class="btn-x">✖</button>
-      <div class="dialog-e">
-        <h1>¡Envíos!</h1>
-        <p>
-          Ofrecemos envíos rápidos y confiables para que recibas tus productos
-          en la puerta de tu casa. Trabajamos con empresas de mensajería de
-          confianza para garantizar que tu pedido llegue a tiempo y en perfectas
-          condiciones. Consulta nuestras opciones de envío y tarifas al realizar
-          tu compra.
-        </p>
-        <p>
-          Compra ahora <a href="productos.html" id="link-e">¡Click Aquí!</a>
-        </p>
-      </div>
-    </dialog>
+    </div>
+  </dialog>
+  <!--MODAL COMPRAR EN LINEA-->
+  <dialog id="modal-cl">
+    <button id="btn-x-cerrar-cl" class="btn-x">✖</button>
+    <div class="dialog-cl">
+      <h1>¡Comprar en Linea!</h1>
+      <p>
+        Comprar en línea es fácil y conveniente. Puedes explorar nuestra
+        amplia selección de productos desde la comodidad de tu hogar y
+        realizar tu pedido con solo unos clics. Ofrecemos opciones de pago
+        seguras y envío rápido para que recibas tus productos directamente en
+        tu puerta.
+      </p>
+      <p>
+        Compra ahora <a href="productos.html" id="link-cl">¡Click Aquí!</a>
+      </p>
+    </div>
+  </dialog>
+  <!--MODAL Envio-->
+  <dialog id="modal-e">
+    <button id="btn-x-cerrar-e" class="btn-x">✖</button>
+    <div class="dialog-e">
+      <h1>¡Envíos!</h1>
+      <p>
+        Ofrecemos envíos rápidos y confiables para que recibas tus productos
+        en la puerta de tu casa. Trabajamos con empresas de mensajería de
+        confianza para garantizar que tu pedido llegue a tiempo y en perfectas
+        condiciones. Consulta nuestras opciones de envío y tarifas al realizar
+        tu compra.
+      </p>
+      <p>
+        Compra ahora <a href="productos.html" id="link-e">¡Click Aquí!</a>
+      </p>
+    </div>
+  </dialog>
 
-    <!--MODAL Proveedores-->
-    <dialog id="modal-pee">
-      <button id="btn-x-cerrar-pee" class="btn-x">✖</button>
-      <div class="dialog-pee">
-        <h1>¡Proveedores!</h1>
-        <p>
-          En KIO Gloss, trabajamos con proveedores de confianza para ofrecerte
-          productos de la más alta calidad. Nuestros proveedores son
-          seleccionados cuidadosamente para garantizar que cada producto cumpla
-          con nuestros estándares de excelencia. Nos enorgullece colaborar con
-          marcas reconocidas y emergentes que comparten nuestra pasión por la
-          belleza y el cuidado personal.
-        </p>
-      </div>
-    </dialog>
-  </body>
+  <!--MODAL Proveedores-->
+  <dialog id="modal-pee">
+    <button id="btn-x-cerrar-pee" class="btn-x">✖</button>
+    <div class="dialog-pee">
+      <h1>¡Proveedores!</h1>
+      <p>
+        En KIO Gloss, trabajamos con proveedores de confianza para ofrecerte
+        productos de la más alta calidad. Nuestros proveedores son
+        seleccionados cuidadosamente para garantizar que cada producto cumpla
+        con nuestros estándares de excelencia. Nos enorgullece colaborar con
+        marcas reconocidas y emergentes que comparten nuestra pasión por la
+        belleza y el cuidado personal.
+      </p>
+    </div>
+  </dialog>
+</body>
+
 </html>
