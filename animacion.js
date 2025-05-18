@@ -32,3 +32,5 @@ document.addEventListener("DOMContentLoaded", function () {
     requestAnimationFrame(animacionScroll);
   }
 });
+
+//TERMINÓ//

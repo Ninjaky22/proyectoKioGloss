@@ -532,3 +532,5 @@ document.addEventListener("DOMContentLoaded", function () {
     console.warn("Advertencia: #logo-link no encontrado.");
   }
 }); // Fin del DOMContentLoaded
+
+// TERMINÓ //
